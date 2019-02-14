@@ -1,0 +1,19 @@
+{
+  "name": "webdevportfolio",
+  "version": "1.0.0",
+  "description": "Web Development Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Optimo1983/Web-Dev-Portfolio.git"
+  },
+  "author": "Justin Schiller, Jared Schiller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Optimo1983/Web-Dev-Portfolio/issues"
+  },
+  "homepage": "https://github.com/Optimo1983/Web-Dev-Portfolio#readme"
+}
