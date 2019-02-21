@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var messageSchema = new mongoose.Schema({
+var requestSchema = new mongoose.Schema({
     name: String,
     email: String,
     message: String,
@@ -8,4 +8,4 @@ var messageSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("message", messageSchema)
+module.exports = mongoose.model("request", requestSchema)
