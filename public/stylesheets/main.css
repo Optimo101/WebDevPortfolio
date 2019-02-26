@@ -44,7 +44,6 @@
 .section-contact #contact-container-form {
     max-width: 470px;
     margin: 0% auto;
-    border: 1px solid red;
 }
 
 .section-contact input {
@@ -104,6 +103,7 @@
  
 .container_upArrowIcon {
     text-align: center;
+    cursor: pointer;
 }
 
 #upArrowIcon {
@@ -126,10 +126,9 @@
     margin-top: 60px;
     height: 62px;
     text-align: center;
-    border: 1px solid red;
 }
 
-.footer-icon {
+.container-icons a {
     background: #262F38;
     margin: 0px 5px;
     padding: 15px 10px;
@@ -139,9 +138,10 @@
     width: 60px;
     text-align: center;
     transition: background-color 0.5s ease;
+
 }
 
-.footer-icon:hover {
+.container-icons a:hover {
     background-color: steelblue;
 }
 

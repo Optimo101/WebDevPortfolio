@@ -2,7 +2,7 @@
 var upArrowIcon = document.getElementById("upArrowIcon");
   
   upArrowIcon.addEventListener("click", function(){
-  scrollToTop(150);
+  scrollToTop(100);
 });
 
 function scrollToTop(scrollDuration) {
