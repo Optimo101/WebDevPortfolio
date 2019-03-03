@@ -1,0 +1,83 @@
+/* === CONTACT SECTION === */
+#container-contact-section {
+    padding: 0;
+    background: #252934;
+    height: 700px;
+}
+
+#container-h2 {
+    padding: 50px 0px;
+}
+
+.section-contact h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.section-contact hr {
+    width: 70px;
+}
+
+.section-contact p {
+    padding: 0px 0px 40px 0px;
+    text-align: center;
+    color: white;
+}
+
+.section-contact #contact-container-paragraph {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+
+.section-contact #contact-container-form {
+    max-width: 470px;
+    margin: 0% auto;
+}
+
+.section-contact input {
+    width: 90%;
+    height: 35px;
+    margin: 3px auto;
+    border: none;
+    display: block;
+    font-size: 12pt;
+    padding: 10px 15px 10px 15px;
+    background-color: #1E242C;
+}
+
+.section-contact input:focus {outline:0 !important;}
+
+.section-contact textarea {
+    width: 90%;
+    height: 140px;
+    margin: 3px auto;
+    padding: 10px 15px 10px 15px;
+    background-color: #1E242C;
+    border: none;
+    display: block;
+    font-size: 12pt;
+}
+
+.section-contact textarea:focus {outline:0 !important;}
+
+.section-contact, select, textarea {
+    color: #ffffff;
+}
+
+.section-contact button {
+    height: 35px;
+    background-color: transparent;
+    margin: 3px 5% 3px 0px;
+    padding: 10px 30px;
+    font-size: 12pt;
+    line-height: 8px;
+    text-transform: uppercase;
+    color: white;
+    transition: background-color 0.5s ease;
+    border: 1px solid white;
+}
+
+.section-contact button:hover {
+    background-color: steelblue;
+}
