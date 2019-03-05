@@ -8,6 +8,106 @@
 
 <% include partials/projects %>
 
-<% include partials/contact %>
+<!-- ====== CONTACT SECTION ====== -->
+
+<div id="container-contact-section" class="section-contact">
+    
+    <div id="container-h2">
+        <h2>Contact</h2>
+        <hr>
+    </div>
+
+    <div id="contact-container-paragraph">
+        <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit?</strong></p>
+    </div>
+
+    <div id="contact-container-form">
+        <form id="requestForm" action="/post" method="POST">
+            
+                <p id="successP" class="no-display"></p>
+
+                <p id="errorNameP" class="no-display"></p>
+                <input id="nameInputId" type="text" name="name" placeholder="Name">
+                
+                <p id="errorEmailP" class="no-display"></p>
+                <input id="emailInputId" type="email" name="email" placeholder="Email">
+                
+                <p id="errorMessageP" class="no-display"></p>
+                <textarea id="messageInputId" name="message" placeholder="Your message..."></textarea>
+                
+                <button class="float-right">Send</button>
+        </form>
+    </div>
+</div>
+<script>
+
+var nameInputId = document.getElementById("nameInputId");
+var emailInputId = document.getElementById("emailInputId");
+var messageInputId = document.getElementById("messageInputId");
+
+    if (<%= posted %>){
+        if (<%= success %>){
+            // Scroll to form, display "success" message, reset form to default
+            document.getElementById("requestForm").scrollIntoView();
+            document.getElementById('successP').innerHTML = "Your message was sent successfully!";
+            document.getElementById("successP").style.display = "block";
+            document.getElementById("errorNameP").style.display = "none";
+            document.getElementById("errorEmailP").style.display = "none";
+            document.getElementById("errorMessageP").style.display = "none";
+
+            document.getElementById('successP').className -= "no-display";
+            document.getElementById('successP').className += " display";
+
+        } else {
+            // Scroll to form, display applicable errors and user's input data
+            document.getElementById("requestForm").scrollIntoView();
+            if (<%= hasErrorName %>){
+                document.getElementById("errorNameP").innerHTML = "<%= errorName %>";
+                document.getElementById('nameInputId').value = "<%= userName %>";
+                document.getElementById("nameInputId").className += " errorInputBorder";
+
+                document.getElementById("errorNameP").className -= "no-display";
+                document.getElementById("errorNameP").className += " display";
+
+            } else {
+                document.getElementById("errorNameP").style.display = "none";
+                document.getElementById('nameInputId').value = "<%= userName %>";
+                document.getElementById("nameInputId").className -= " errorInputBorder";
+            }
+
+            if (<%= hasErrorEmail %>){
+                document.getElementById("errorEmailP").innerHTML = "<%= errorEmail %>";
+                document.getElementById('emailInputId').value = "<%= userEmail %>";
+                document.getElementById("emailInputId").className += " errorInputBorder";
+
+                document.getElementById("errorEmailP").className -= "no-display";
+                document.getElementById("errorEmailP").className += " display";
+            } else {
+                document.getElementById("errorEmailP").style.display = "none";
+                document.getElementById('emailInputId').value = "<%= userEmail %>";
+                document.getElementById("emailInputId").className -= " errorInputBorder";
+            }
+
+            if (<%= hasErrorMessage %>){
+                document.getElementById("errorMessageP").innerHTML = "<%= errorMessage %>";
+                document.getElementById('messageInputId').value = "<%= userMessage %>";
+                document.getElementById("messageInputId").className += " errorInputBorder";
+
+                document.getElementById("errorMessageP").className -= "no-display";
+                document.getElementById("errorMessageP").className += " display";
+            } else {
+                document.getElementById("errorMessageP").style.display = "none";
+                document.getElementById('messageInputId').value = "<%= userMessage %>";
+                document.getElementById("messageInputId").className -= " errorInputBorder";
+            }
+        }
+    } else {
+        // reset form to default 
+        document.getElementById('requestForm').reset();
+    }
+
+</script>
+
+<!-- <script type="text/javascript" src="/scripts/contact.js"></script> -->
 
 <% include partials/footer %>
