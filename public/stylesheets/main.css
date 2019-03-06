@@ -119,14 +119,16 @@ nav .navbar-collapse {
     padding: 0 0 5px 0;
     text-align: center;
     line-height: 6pt;
+    font-size: 11pt;
 }
 
 .section-contact #contact-container-form p:nth-of-type(n+2) {
     color: crimson;
-    margin: 8px 0px 2px 0px;
+    margin: 6px 0px 2px 0px;
     padding: 0;
     text-align: center;
     line-height: 6pt;
+    font-size: 10pt;
 }
 
 .section-contact input {
