@@ -39,25 +39,14 @@
         </form>
     </div>
 </div>
+
 <script>
-
-var nameInputId = document.getElementById("nameInputId");
-var emailInputId = document.getElementById("emailInputId");
-var messageInputId = document.getElementById("messageInputId");
-
     if (<%= posted %>){
         if (<%= success %>){
             // Scroll to form, display "success" message, reset form to default
             document.getElementById("requestForm").scrollIntoView();
             document.getElementById('successP').innerHTML = "Your message was sent successfully!";
             document.getElementById("successP").style.display = "block";
-            document.getElementById("errorNameP").style.display = "none";
-            document.getElementById("errorEmailP").style.display = "none";
-            document.getElementById("errorMessageP").style.display = "none";
-
-            document.getElementById('successP').className -= "no-display";
-            document.getElementById('successP').className += " display";
-
         } else {
             // Scroll to form, display applicable errors and user's input data
             document.getElementById("requestForm").scrollIntoView();
@@ -65,10 +54,7 @@ var messageInputId = document.getElementById("messageInputId");
                 document.getElementById("errorNameP").innerHTML = "<%= errorName %>";
                 document.getElementById('nameInputId').value = "<%= userName %>";
                 document.getElementById("nameInputId").className += " errorInputBorder";
-
-                document.getElementById("errorNameP").className -= "no-display";
-                document.getElementById("errorNameP").className += " display";
-
+                document.getElementById("errorNameP").style.display = "block";
             } else {
                 document.getElementById("errorNameP").style.display = "none";
                 document.getElementById('nameInputId').value = "<%= userName %>";
@@ -79,9 +65,7 @@ var messageInputId = document.getElementById("messageInputId");
                 document.getElementById("errorEmailP").innerHTML = "<%= errorEmail %>";
                 document.getElementById('emailInputId').value = "<%= userEmail %>";
                 document.getElementById("emailInputId").className += " errorInputBorder";
-
-                document.getElementById("errorEmailP").className -= "no-display";
-                document.getElementById("errorEmailP").className += " display";
+                document.getElementById("errorEmailP").style.display = "block";
             } else {
                 document.getElementById("errorEmailP").style.display = "none";
                 document.getElementById('emailInputId').value = "<%= userEmail %>";
@@ -92,20 +76,14 @@ var messageInputId = document.getElementById("messageInputId");
                 document.getElementById("errorMessageP").innerHTML = "<%= errorMessage %>";
                 document.getElementById('messageInputId').value = "<%= userMessage %>";
                 document.getElementById("messageInputId").className += " errorInputBorder";
-
-                document.getElementById("errorMessageP").className -= "no-display";
-                document.getElementById("errorMessageP").className += " display";
+                document.getElementById("errorMessageP").style.display = "block";
             } else {
                 document.getElementById("errorMessageP").style.display = "none";
                 document.getElementById('messageInputId').value = "<%= userMessage %>";
                 document.getElementById("messageInputId").className -= " errorInputBorder";
             }
         }
-    } else {
-        // reset form to default 
-        document.getElementById('requestForm').reset();
     }
-
 </script>
 
 <!-- <script type="text/javascript" src="/scripts/contact.js"></script> -->
