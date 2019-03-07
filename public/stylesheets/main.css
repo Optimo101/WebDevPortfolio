@@ -18,14 +18,10 @@
     float: right;
 }
 
+.display {
+    display: block;
+}
 
-
- 
-
-
-
-
-
-
-
-
+.no-display {
+    display: none;
+}
