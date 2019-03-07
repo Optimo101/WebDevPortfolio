@@ -1,0 +1,51 @@
+/* === FOOTER SECTION === */
+
+#container-footer-section {
+    height: 250px;
+    padding: 0;
+    background: #1B242F;
+}
+ 
+.container_upArrowIcon {
+    text-align: center;
+    cursor: pointer;
+}
+
+#upArrowIcon {
+    background: transparent;
+    color: white;
+    display: inline-block;
+    padding: 0px;
+    width: 50px;
+    font-size: 50px;
+    text-align: center;
+    margin-top: -25px;
+    transition: color 0.5s ease;
+}
+
+#upArrowIcon:hover {
+    color: steelblue;
+ }
+
+.container-icons {
+    margin-top: 60px;
+    height: 62px;
+    text-align: center;
+}
+
+.container-icons a {
+    background: #262F38;
+    margin: 0px 5px;
+    padding: 15px 10px;
+    display: inline-block;
+    font-size: 30px;
+    color: white;
+    width: 60px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+
+}
+
+.container-icons a:hover {
+    background-color: steelblue;
+}
