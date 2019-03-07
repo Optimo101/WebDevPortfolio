@@ -6,7 +6,7 @@
 }
 
 #container-h2 {
-    padding: 50px 0px;
+    padding: 75px 0px 50px 0px;
 }
 
 .section-contact h2 {
@@ -18,32 +18,53 @@
     width: 70px;
 }
 
-.section-contact p {
-    padding: 0px 0px 40px 0px;
-    text-align: center;
-    color: white;
-}
-
-.section-contact #contact-container-paragraph {
+#contact-container-paragraph {
     max-width: 300px;
     margin: 0 auto;
 }
 
+#contact-container-paragraph p {
+    padding: 0px 0px 55px 0px;
+    text-align: center;
+    color: white;
+}
 
 .section-contact #contact-container-form {
     max-width: 470px;
     margin: 0% auto;
 }
 
+.section-contact #contact-container-form p:nth-of-type(1) {
+    color: lightgreen;
+    margin: 0;
+    padding: 0 0 5px 0;
+    text-align: center;
+    line-height: 6pt;
+    font-size: 11pt;
+}
+
+.section-contact #contact-container-form p:nth-of-type(n+2) {
+    color: crimson;
+    margin: 6px 0px 2px 0px;
+    padding: 0;
+    text-align: center;
+    line-height: 6pt;
+    font-size: 10pt;
+}
+
 .section-contact input {
     width: 90%;
     height: 35px;
     margin: 3px auto;
-    border: none;
     display: block;
     font-size: 12pt;
     padding: 10px 15px 10px 15px;
     background-color: #1E242C;
+    border: none;
+}
+
+.section-contact .errorInputBorder {
+    border: 1px solid crimson;
 }
 
 .section-contact input:focus {outline:0 !important;}
@@ -68,7 +89,7 @@
 .section-contact button {
     height: 35px;
     background-color: transparent;
-    margin: 3px 5% 3px 0px;
+    margin: 1px 5% 1px 0px;
     padding: 10px 30px;
     font-size: 12pt;
     line-height: 8px;
