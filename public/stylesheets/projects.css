@@ -1,0 +1,61 @@
+#project-section {
+    padding: 0;
+    background: #252934;
+    height: 700px;
+}
+
+#project-section #container-h2 {
+    padding: 75px 0px 50px 0px;
+}
+
+#project-section h2 {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+#project-section hr {
+    width: 70px;
+}
+
+#project-section #container-gallery {
+    max-width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#project-section #container-project1 {
+    height: 100%;
+    width: 400px;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: green;
+}
+
+#project-section #container-project2 {
+    height: 100%;
+    width: 400px;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: lightgreen;
+
+}
+
+
+#project-section #container-project3 {
+    height: 100%;
+    width: 400px;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: green;
+
+
+}
+

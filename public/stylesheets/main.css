@@ -25,3 +25,12 @@
 .no-display {
     display: none;
 }
+
+.red-border {
+    border: 1px dotted red;
+}
+
+.orange-border {
+    border: 1px dotted orange;
+}
+
