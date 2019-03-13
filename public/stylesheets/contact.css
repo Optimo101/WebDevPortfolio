@@ -1,12 +1,13 @@
 /* === CONTACT SECTION === */
 #container-contact-section {
-    padding: 0;
+    clear: left;
+    padding: 50px 0;
     background: #252934;
     height: 700px;
 }
 
 #container-contact-section #container-h2 {
-    padding: 75px 0px 50px 0px;
+    padding: 0px 0px 25px 0px;
 }
 
 #container-contact-section h2 {
@@ -16,6 +17,7 @@
 
 #container-contact-section hr {
     width: 70px;
+    border-top: thin solid white;
 }
 
 #contact-container-paragraph {

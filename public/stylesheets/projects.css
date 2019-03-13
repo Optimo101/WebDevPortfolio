@@ -1,61 +1,57 @@
-#project-section {
-    padding: 0;
+.project-section {
+    padding: 50px 0;
     background: #252934;
-    height: 700px;
+    height: auto;
 }
 
-#project-section #container-h2 {
-    padding: 75px 0px 50px 0px;
+.project-section #container-h2 {
+    padding: 0px 0px 25px 0px;
 }
 
-#project-section h2 {
+.project-section h2 {
     text-align: center;
     margin: 0;
     color: white;
 }
 
-#project-section hr {
+.project-section hr {
     width: 70px;
+    border-top: thin solid white;
 }
 
-#project-section #container-gallery {
+.project-section .gallery-box {
     max-width: 1200px;
-    height: 400px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
+    padding: 0 25px;
+    text-align: center;
     display: flex;
-}
-
-#project-section #container-project1 {
-    height: 100%;
-    width: 400px;
-    display: inline-block;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    background-color: green;
-}
-
-#project-section #container-project2 {
-    height: 100%;
-    width: 400px;
-    display: inline-block;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    background-color: lightgreen;
+    
 
 }
 
+@media screen and (min-width:800px) {
+    .project-section .project-box {
+        float: left;
+        width: 100%;
+    }
 
-#project-section #container-project3 {
-    height: 100%;
-    width: 400px;
-    display: inline-block;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    background-color: green;
+}
 
+@media screen and (max-width:799px) {
+    .project-section .gallery-box {
+        display: block;
+        padding: 0 25px;
+        max-width: 500px;
+    }
 
+    .project-section .project-box {
+        float: none;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.project-box img {
+    width: 100%;
 }
 
