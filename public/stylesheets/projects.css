@@ -19,35 +19,57 @@
     border-top: thin solid white;
 }
 
+
+/* .mid-box {
+    display: inline-block;
+    width: 400px;
+    height: 300px;
+    background-image: url("../../trueCostThumb1.jpg");
+} */
+
+/* .inner-box {
+    width: 400px;
+    height: 300px;
+    background-color: white;
+} */
+
+/* .mid-box > .inner-box {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+} */
+
+/* .mid-box:hover > .inner-box {
+    visibility: visible;
+    opacity: 1;
+} */
+
 .project-section .gallery-box {
     max-width: 1200px;
     margin: 0 auto 50px auto;
-    padding: 0 25px;
+    padding: 25px 25px;
     text-align: center;
     display: flex;
-    
-
 }
 
-@media screen and (min-width:800px) {
+@media screen and (min-width:900px) {
     .project-section .project-box {
-        float: left;
         width: 100%;
+        padding: 10px;
     }
-
 }
 
-@media screen and (max-width:799px) {
+@media screen and (max-width:899px) {
     .project-section .gallery-box {
         display: block;
         padding: 0 25px;
         max-width: 500px;
     }
-
     .project-section .project-box {
         float: none;
         display: inline-block;
         width: 100%;
+        padding: 10px;
     }
 }
 
