@@ -1,7 +1,14 @@
 /* GENERAL */
 * {
-    /* margin: 0; */
     font-family: 'Raleway', sans-serif;
+}
+
+body{
+    z-index: -10;
+}
+
+a:hover, a:visited, a:active, a:link {
+    text-decoration: none;
 }
 
 .main-wrapper {

@@ -1,9 +1,8 @@
 /* LANDING */
-.section-landing {
+#section-landing {
     position: relative;
-    margin-top: 52px;
-    height: calc(100vh - 52px);
-    z-index: -1;
+    margin-top: 80px;
+    height: calc(100vh - 80px);
 }
 
 .landing-background-picture {
@@ -32,7 +31,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color:#4682b4;
+    background-color:#0093ff;
     width: 100%;
     height: 100%;
     opacity: .65;
@@ -61,9 +60,45 @@
     font-weight: 700;
 } 
 
+.landing-content a {
+    z-index: 1;
+}
+
+.landing-button {
+    width: 220px;
+    height: 70px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16pt;
+    background-color: none;
+    transition: background-color .3s;
+}
+
+.landing-button:hover {
+    background-color: #252934;
+}
+
+.landing-content a div i {
+    font-size: 20pt;
+    transform: rotate();
+    transition: all .3s;
+}
+
+.turn-90-deg {
+    transform: rotate(90deg);
+}
+
 @media screen and (max-width: 500px) {
     .landing-content p {
         font-size: 20pt;
         line-height: 22pt;
     }
 }
+
+
