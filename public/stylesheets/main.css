@@ -1,6 +1,7 @@
 /* GENERAL */
 * {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
 
 body{
@@ -32,3 +33,12 @@ a:hover, a:visited, a:active, a:link {
 .no-display {
     display: none;
 }
+
+.red-border {
+    border: 1px dotted red;
+}
+
+.orange-border {
+    border: 1px dotted orange;
+}
+

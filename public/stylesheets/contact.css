@@ -1,21 +1,23 @@
 /* === CONTACT SECTION === */
 #container-contact-section {
+    clear: left;
     padding: 0;
     background: #252934;
-    height: 700px;
+    height: auto;
 }
 
-#container-h2 {
-    padding: 75px 0px 50px 0px;
+#container-contact-section #container-h2 {
+    padding: 0px 0px 25px 0px;
 }
 
-.section-contact h2 {
+#container-contact-section h2 {
     text-align: center;
     margin: 0;
 }
 
-.section-contact hr {
+#container-contact-section hr {
     width: 70px;
+    border-top: thin solid white;
 }
 
 #contact-container-paragraph {
@@ -29,12 +31,12 @@
     color: white;
 }
 
-.section-contact #contact-container-form {
+#container-contact-section #contact-container-form {
     max-width: 470px;
-    margin: 0% auto;
+    margin: 0 auto 150px auto;
 }
 
-.section-contact #contact-container-form p:nth-of-type(1) {
+#contact-container-form p:nth-of-type(1) {
     color: lightgreen;
     margin: 0;
     padding: 0 0 5px 0;
@@ -43,7 +45,7 @@
     font-size: 11pt;
 }
 
-.section-contact #contact-container-form p:nth-of-type(n+2) {
+#contact-container-form p:nth-of-type(n+2) {
     color: crimson;
     margin: 6px 0px 2px 0px;
     padding: 0;
@@ -52,7 +54,7 @@
     font-size: 10pt;
 }
 
-.section-contact input {
+#container-contact-section input {
     width: 90%;
     height: 35px;
     margin: 3px auto;
@@ -63,13 +65,13 @@
     border: none;
 }
 
-.section-contact .errorInputBorder {
+#container-contact-section .errorInputBorder {
     border: 1px solid crimson;
 }
 
-.section-contact input:focus {outline:0 !important;}
+#container-contact-section input:focus {outline:0 !important;}
 
-.section-contact textarea {
+#container-contact-section textarea {
     width: 90%;
     height: 140px;
     margin: 3px auto;
@@ -80,13 +82,13 @@
     font-size: 12pt;
 }
 
-.section-contact textarea:focus {outline:0 !important;}
+#container-contact-section textarea:focus {outline:0 !important;}
 
-.section-contact, select, textarea {
+#container-contact-section, select, textarea {
     color: #ffffff;
 }
 
-.section-contact button {
+#container-contact-section button {
     height: 35px;
     background-color: transparent;
     margin: 1px 5% 1px 0px;
@@ -99,6 +101,6 @@
     border: 1px solid white;
 }
 
-.section-contact button:hover {
+#container-contact-section button:hover {
     background-color: steelblue;
 }

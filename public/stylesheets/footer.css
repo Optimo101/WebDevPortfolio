@@ -1,7 +1,7 @@
 /* === FOOTER SECTION === */
 
 #container-footer-section {
-    height: 250px;
+    height: 200px;
     padding: 0;
     background: #1B242F;
 }
@@ -28,7 +28,7 @@
  }
 
 .container-icons {
-    margin-top: 60px;
+    margin-top: 45px;
     height: 62px;
     text-align: center;
 }
