@@ -20,12 +20,12 @@
 }
 
 
-@media screen and (min-width:1025px) {
+@media screen and (min-width:900px) {
     .project-section .gallery-box {
         display: flex;
         flex-flow: row;
         justify-content: center;
-        max-width: 1400px;
+        max-width: 1350px;
         margin: 0 auto;
         padding: 0 25px;
     }    
@@ -42,7 +42,7 @@
 
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:899px) {
     .project-section .gallery-box {
         display: flex;
         flex-flow: column;
