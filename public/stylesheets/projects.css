@@ -20,7 +20,7 @@
 }
 
 
-@media screen and (min-width:900px) {
+@media screen and (min-width:861px) {
     .project-section .gallery-box {
         display: flex;
         flex-flow: row;
@@ -42,7 +42,7 @@
 
 }
 
-@media screen and (max-width:899px) {
+@media screen and (max-width:860px) {
     .project-section .gallery-box {
         display: flex;
         flex-flow: column;
