@@ -1,9 +1,9 @@
 /* === CONTACT SECTION === */
 #container-contact-section {
     clear: left;
-    padding: 50px 0;
+    padding: 0;
     background: #252934;
-    height: 700px;
+    height: auto;
 }
 
 #container-contact-section #container-h2 {
@@ -33,7 +33,7 @@
 
 #container-contact-section #contact-container-form {
     max-width: 470px;
-    margin: 0% auto;
+    margin: 0 auto 150px auto;
 }
 
 #contact-container-form p:nth-of-type(1) {

@@ -1,5 +1,5 @@
 .project-section {
-    padding: 50px 0;
+    padding: 0;
     background: #252934;
     height: auto;
 }
@@ -26,8 +26,8 @@
         flex-flow: row;
         justify-content: center;
         max-width: 1350px;
-        margin: 0 auto;
-        padding: 0 25px;
+        margin: 0 auto 125px auto;
+        padding: 0 25px 0 25px;
     }    
 
     .project-section .project-box {
@@ -48,7 +48,7 @@
         flex-flow: column;
         align-items: center;
         max-width: 600px;
-        margin: 0 auto;
+        margin: 0 auto 50px auto;
     }
 
     .project-section .project-box {
@@ -58,7 +58,6 @@
         justify-content: flex-start;
         max-width: 600px;
         padding: 0 25px 75px 25px;
-    
     }
 }
 
@@ -80,7 +79,6 @@
     color: white;
     margin-top: 10px;
     transition: color .35s ease-in-out;
-
 }
 
 .project-box p {
