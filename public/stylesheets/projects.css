@@ -79,6 +79,8 @@
 .project-box h3 {
     color: white;
     margin-top: 10px;
+    transition: color .35s ease-in-out;
+
 }
 
 .project-box p {
