@@ -20,60 +20,71 @@
 }
 
 
-/* .mid-box {
-    display: inline-block;
-    width: 400px;
-    height: 300px;
-    background-image: url("../../trueCostThumb1.jpg");
-} */
-
-/* .inner-box {
-    width: 400px;
-    height: 300px;
-    background-color: white;
-} */
-
-/* .mid-box > .inner-box {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-} */
-
-/* .mid-box:hover > .inner-box {
-    visibility: visible;
-    opacity: 1;
-} */
-
-.project-section .gallery-box {
-    max-width: 1200px;
-    margin: 0 auto 50px auto;
-    padding: 25px 25px;
-    text-align: center;
-    display: flex;
-}
-
-@media screen and (min-width:900px) {
-    .project-section .project-box {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-@media screen and (max-width:899px) {
+@media screen and (min-width:1025px) {
     .project-section .gallery-box {
-        display: block;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        max-width: 1400px;
+        margin: 0 auto;
         padding: 0 25px;
-        max-width: 500px;
-    }
+    }    
+
     .project-section .project-box {
-        float: none;
-        display: inline-block;
-        width: 100%;
-        padding: 10px;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-basis: 480px;
+        padding: 0 10px;
+        transition: opacity .35s ease-in-out;
     }
+
+}
+
+@media screen and (max-width:1024px) {
+    .project-section .gallery-box {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .project-section .project-box {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 600px;
+        padding: 0 25px 75px 25px;
+    
+    }
+}
+
+.project-section a {
+    text-decoration: none !important;
 }
 
 .project-box img {
     width: 100%;
 }
 
+.project-box hr {
+    margin: 0;
+    padding: 10px;
+    width: 100px;
+}
+
+.project-box h3 {
+    color: white;
+    margin-top: 10px;
+}
+
+.project-box p {
+    color: white;
+}
+
+.project-box p:nth-of-type(1) {
+    font-size: 10pt;
+}
