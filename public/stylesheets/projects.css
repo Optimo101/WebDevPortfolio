@@ -4,87 +4,180 @@
     height: auto;
 }
 
-.project-section #container-h2 {
+.project-section .title-container {
     padding: 0px 0px 25px 0px;
 }
 
-.project-section h2 {
+.project-section .title-container h2 {
     text-align: center;
     margin: 0;
     color: white;
 }
 
-.project-section hr {
+.project-section .title-container hr {
     width: 70px;
     border-top: thin solid white;
 }
 
+.project-section .gallery-box {
+    display: flex;
+    margin: 75px auto 100px auto;
+
+}
+
+.project-section .project-box {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: opacity .35s ease-in-out;
+    cursor: pointer;
+}
 
 @media screen and (min-width:861px) {
     .project-section .gallery-box {
-        display: flex;
         flex-flow: row;
         justify-content: center;
         max-width: 1350px;
-        margin: 0 auto 125px auto;
         padding: 0 25px 0 25px;
     }    
 
     .project-section .project-box {
-        display: flex;
-        flex-flow: column;
-        align-items: flex-start;
-        justify-content: flex-start;
         flex-basis: 480px;
         padding: 0 10px;
-        transition: opacity .35s ease-in-out;
     }
-
 }
 
 @media screen and (max-width:860px) {
     .project-section .gallery-box {
-        display: flex;
         flex-flow: column;
         align-items: center;
         max-width: 600px;
-        margin: 0 auto 50px auto;
     }
 
     .project-section .project-box {
-        display: flex;
-        flex-flow: column;
-        align-items: flex-start;
-        justify-content: flex-start;
         max-width: 600px;
         padding: 0 25px 75px 25px;
     }
-}
-
-.project-section a {
-    text-decoration: none !important;
 }
 
 .project-box img {
     width: 100%;
 }
 
-.project-box hr {
-    margin: 0;
-    padding: 10px;
-    width: 100px;
-}
-
 .project-box h3 {
     color: white;
-    margin-top: 10px;
+    margin: 10px 0 5px 0;
     transition: color .35s ease-in-out;
+}
+
+.project-box p:nth-of-type(1) {
+    margin: 0 0 10px 0;
+}
+
+.project-box hr {
+    margin: 0;
+    width: 100px;
 }
 
 .project-box p {
     color: white;
 }
 
-.project-box p:nth-of-type(1) {
-    font-size: 10pt;
-}
+/* The Modal (background) */
+.project-section .modal {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: white; /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.473); /* Black w/ opacity */
+  }
+  
+  /* Modal Box (content) */
+  .project-section .modal-content {
+    background-color: #fefefe;
+    margin: 50px auto;
+    border: 1px solid black;
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    transition: all .5s;
+  }
+
+  .modal-content img{
+    width: 100%;
+    border-bottom: 3px solid steelblue;
+  }
+
+  /* Title and meta infor in bottom half of modal box */
+  .modal-content .modal-meta-info {
+    flex-direction: column;
+    padding: 10px 25px 25px 25px;
+  }
+
+  .modal-meta-info h2 {
+    margin: 0;
+  }
+
+  .modal-meta-info h4 {
+    margin: 5px 0;
+    color: grey;
+  }
+
+  .modal-meta-info hr {
+      height: 1px;
+      color: black;
+      background-color: lightgrey;
+      margin: 10px 0 15px 0;
+  }
+
+  .modal-meta-info p {
+      margin: 10px 0 20px 0;
+  }
+
+  .modal-meta-info a {
+    display: inline-block;
+    height: 40px;
+    width: 150px;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    background-color: steelblue;
+    font-size: 12pt;
+    text-transform: uppercase;
+    color: white;
+    transition: background-color 0.5s ease;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+
+  .modal-meta-info a:hover {
+    background-color: rgb(88, 165, 228);
+    color: white;
+    border: 1px solid steelblue;
+  }
+
+  /* The Close Buttons */
+  .modal-meta-info .close {
+    display: inline-block;
+    float: right;
+    font-size: 25px;
+    margin-top: 17px;
+    opacity: .5;
+    transition: opacity 0.5s ease;
+
+  }
+  
+  .modal-meta-info .close:hover,
+  .modal-meta-info .close:focus {
+    opacity: 1;
+    text-decoration: none;
+    cursor: pointer;
+  }
