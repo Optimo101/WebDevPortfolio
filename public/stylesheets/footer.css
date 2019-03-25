@@ -1,7 +1,6 @@
 /* === FOOTER SECTION === */
 
 #container-footer-section {
-    height: 200px;
     padding: 0;
     background: #1B242F;
 }
@@ -28,8 +27,8 @@
  }
 
 .container-icons {
-    margin-top: 45px;
-    height: 62px;
+    margin: 0 auto;
+    padding: 50px 0;
     text-align: center;
 }
 

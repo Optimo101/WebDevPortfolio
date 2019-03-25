@@ -1,8 +1,8 @@
 /* LANDING */
 #section-landing {
     position: relative;
-    margin-top: 80px;
-    height: calc(100vh - 80px);
+    margin-top: 70px;
+    height: calc(100vh - 70px);
 }
 
 .landing-background-picture {

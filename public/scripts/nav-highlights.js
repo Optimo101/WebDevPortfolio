@@ -1,30 +1,20 @@
 
-// $(window).scroll(function() {
-//     var position = $(this).scrollTop();
-//     console.log(position);
-
-
-//     var landingTarget = $("#landing").offset().top;
-//     var aboutTarget = $("#about").offset().top;
-//     var projectsTarget = $("#projects").offset().top;
-//     var contactTarget = $("#container-contact-section").offset().top;
-
-    
-// });
-    
-    
-    
-    
     $(window).scroll(function() {
-        var position = ($(this).scrollTop() + 80);
+        var topViewPortPosition = ($(this).scrollTop() + 150);
+        // var midViewPortPosition = (TopViewPortPosition + ($(window).height()/2));
 
         $('.section').each(function() {
+            
             var topTarget = $(this).offset().top;
-            var bottomTarget = $(this).offset().top + $(this).height();
+            // var bottomTarget = $(this).offset().top + $(this).height();
+
+            // var middleTarget = (bottomTarget - ($(this).height()/2));
+            // var topRange = (middleTarget - ($(this).height() * 0.25))
+            // var bottomRange = (middleTarget + ($(this).height() * 0.25))
+            
             var id = $(this).attr('id');
-            console.log(topTarget);
-            console.log(bottomTarget);
-            if ((position) >= topTarget) {
+
+            if (topViewPortPosition > (topTarget + - 150)) {
                 $('#navigation > ul > li > a').removeClass('active');
                 $('#navigation > ul > li > a[href=\\#' + id + ']').addClass('active');
             }
