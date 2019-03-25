@@ -18,6 +18,10 @@ a:hover, a:visited, a:active, a:link {
 }
 
  /* === UNIVERSAL CLASSES === */
+body {
+    margin: 0;
+}
+
 .float-left {
     float: left;
 }

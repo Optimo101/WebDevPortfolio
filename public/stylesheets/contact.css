@@ -1,10 +1,25 @@
 /* === CONTACT SECTION === */
 #container-contact-section {
     clear: left;
-    padding: 0;
     background: #252934;
-    height: auto;
+    height: 550px;
 }
+
+@media screen and (min-width:861px) {
+    #container-contact-section {
+    margin-top: 0px;
+    }
+
+}
+
+
+@media screen and (max-width:860px) {
+    #container-contact-section {
+    margin-top: -100px;
+    }
+
+}
+
 
 #container-contact-section #container-h2 {
     padding: 0px 0px 25px 0px;

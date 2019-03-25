@@ -1,7 +1,8 @@
 .project-section {
+    display: flex;
+    flex-direction: column;
     padding: 0;
     background: #252934;
-    height: auto;
 }
 
 .project-section .title-container {
