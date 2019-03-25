@@ -91,7 +91,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     padding-top: 80px;
     left: 0;
     top: 0;
