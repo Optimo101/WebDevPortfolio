@@ -1,18 +1,13 @@
 <% include partials/header %>
-
 <% include partials/navbar %>
-
 <% include partials/nav-mobile-menu %>
-
 <% include partials/landing %>
-
 <% include partials/about %>
-
 <% include partials/projects %>
 
 <!-- ====== CONTACT SECTION ====== -->
 
-<div id="container-contact-section" class="section-contact container-fluid">
+<div id="container-contact-section" class="section section-contact container-fluid">
     
     <div id="container-h2">
         <h2>Contact</h2>
@@ -26,17 +21,18 @@
     <div id="contact-container-form">
         <form id="requestForm" action="/post" method="POST">
             
-                <p id="successP" class="no-display"></p>
-
+                <div id="successP" class="no-display"><i id="successIcon" class="fas fa-check-circle"></i> Your message has been sent!</div>
+                <div id="failP" class="no-display"><i id="failIcon" class="fas fa-exclamation-circle"></i> There are items that require your attention.</div>
                 <p id="errorNameP" class="no-display"></p>
+
                 <input id="nameInputId" type="text" name="name" placeholder="Name">
-                
-                <p id="errorEmailP" class="no-display"></p>
+
                 <input id="emailInputId" type="email" name="email" placeholder="Email">
-                
-                <p id="errorMessageP" class="no-display"></p>
+                <p id="errorEmailP" class="no-display"></p>
+
                 <textarea id="messageInputId" name="message" placeholder="Your message"></textarea>
-                
+                <p id="errorMessageP" class="no-display"></p>
+
                 <button class="float-right">Send</button>
         </form>
     </div>
@@ -47,11 +43,12 @@
         if (<%= success %>){
             // Scroll to form, display "success" message, reset form to default
             document.getElementById("requestForm").scrollIntoView();
-            document.getElementById('successP').innerHTML = "Your message was sent successfully!";
             document.getElementById("successP").style.display = "block";
         } else {
             // Scroll to form, display applicable errors and user's input data
             document.getElementById("requestForm").scrollIntoView();
+            document.getElementById("failP").style.display = "block";
+
             if (<%= hasErrorName %>){
                 document.getElementById("errorNameP").innerHTML = "<%= errorName %>";
                 document.getElementById('nameInputId').value = "<%= userName %>";
@@ -87,5 +84,4 @@
         }
     }
 </script>
-
 <% include partials/footer %>

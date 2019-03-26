@@ -1,23 +1,36 @@
 /* === CONTACT SECTION === */
 #container-contact-section {
     clear: left;
-    padding: 0;
     background: #252934;
-    height: auto;
+
+}
+
+
+@media screen and (min-width:861px) {
+    #container-contact-section {
+    padding-top: 100px;
+    }
+}
+
+@media screen and (max-width:860px) {
+    #container-contact-section {
+    margin-top: -50px;
+    }
 }
 
 #container-contact-section #container-h2 {
-    padding: 0px 0px 25px 0px;
+    padding: 0px 0px 50px 0px;
+    text-align: center;
 }
 
 #container-contact-section h2 {
-    text-align: center;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 #container-contact-section hr {
     width: 70px;
     border-top: thin solid white;
+    display: inline-block;
 }
 
 #contact-container-paragraph {
@@ -33,31 +46,65 @@
 
 #container-contact-section #contact-container-form {
     max-width: 470px;
-    margin: 0 auto 150px auto;
+    margin: 0 auto;
+    padding: 0 0 235px 0;
 }
 
-#contact-container-form p:nth-of-type(1) {
+#contact-container-form #successP {
     color: lightgreen;
-    margin: 0;
-    padding: 0 0 5px 0;
+    margin-bottom: 30px;
+    padding: 0 0 10px 0;
     text-align: center;
     line-height: 6pt;
-    font-size: 11pt;
+    font-size: 12pt;
+}
+
+#contact-container-form #successIcon {
+    color: lightgreen;
+    margin: 0;
+    text-align: center;
+    line-height: 12pt;
+    font-size: 12pt;
+}
+
+#contact-container-form #failP {
+    color: crimson;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 12pt;
+    font-size: 12pt;
+}
+
+#contact-container-form #failIcon {
+    color: crimson;
+    margin: 0;
+    text-align: center;
+    line-height: 12pt;
+    font-size: 12pt;
+}
+
+#contact-container-form p:nth-of-type(n+1) {
+    color: crimson;
+    text-align: left;
+    margin: -8px 0px -3px 0px;
+    padding-left: 25px;
+    line-height: 10pt;
+    font-size: 10pt;
 }
 
 #contact-container-form p:nth-of-type(n+2) {
     color: crimson;
-    margin: 6px 0px 2px 0px;
-    padding: 0;
-    text-align: center;
-    line-height: 6pt;
+    margin: -2px 0px 0px 0px;
+    padding-left: 25px;
+    text-align: left;
+    line-height: 10pt;
     font-size: 10pt;
 }
 
 #container-contact-section input {
     width: 90%;
     height: 35px;
-    margin: 3px auto;
+    margin: 5px auto;
     display: block;
     font-size: 12pt;
     color: white;
@@ -67,15 +114,15 @@
 }
 
 #container-contact-section .errorInputBorder {
-    border: 1px solid crimson;
+    box-shadow: inset 0 0 0.5em crimson;
 }
 
 #container-contact-section input:focus {outline:0 !important;}
 
 #container-contact-section textarea {
     width: 90%;
-    height: 140px;
-    margin: 3px auto;
+    height: 150px;
+    margin: 20px auto 5px auto;
     padding: 10px 15px 10px 15px;
     background-color: #1E242C;
     border: none;
@@ -92,7 +139,7 @@
 #container-contact-section button {
     height: 35px;
     background-color: transparent;
-    margin: 1px 5% 1px 0px;
+    margin: 5px 5% 0px 0px;
     padding: 10px 30px;
     font-size: 12pt;
     line-height: 8px;
