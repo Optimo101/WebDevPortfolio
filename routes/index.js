@@ -1,9 +1,10 @@
 //                       DEPENDENCY VARIABLES
 //==============================================================
-var express = require("express");
-var router = express.Router();
-var request = require("../models/request");
-var validator = require("validatorjs");
+const   express = require("express"),
+        router = express.Router(),
+        request = require("../models/request"),
+        validator = require("validatorjs"),
+        nodemailer = require("nodemailer");
 
 //                      ROUTES
 //==============================================================
@@ -27,6 +28,14 @@ router.get("/", function(req, res){
     req.session.posted = false;
 });
 
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'patronepatron@gmail.com',
+        pass: 'GmailSchiller@741852963'
+    }
+});
+
 // CREATE CONTACT REQUEST
 router.post("/post", function(req, res){
     req.session.posted = true;
@@ -48,6 +57,22 @@ router.post("/post", function(req, res){
 
     const validation = new validator(formData, rules);
 
+    const emailTemplate = `
+        <h3>Contact Details</h3>
+        <ul>
+            <li>Name: ${formData.name}</li>
+            <li>Email: ${formData.email}</li>
+            <li>Message: ${formData.message}</li>
+        </ul>
+    `;
+
+    let mailOptions = {
+        from: 'patronepatron@gmail.com',
+        to: 'schiller.justin@gmail.com',
+        subject: 'WebDev Contact Request Form',
+        html: emailTemplate
+    };
+
     if (validation.fails()) {
         req.session.success = false;
 
@@ -63,11 +88,20 @@ router.post("/post", function(req, res){
 
     } else {
         req.session.success = true;
-        request.create(formData, function(err, dbmessage){
-            if(err){
-                console.log(err);
+        request.create(formData, function(error, dbmessage){
+            if(error){
+                console.log(error);
             } else {
                 res.redirect("/");
+            }
+        });
+
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log("Contact request email sent!");
+                console.log(info);
             }
         });
     }
