@@ -1,14 +1,24 @@
 //                       DEPENDENCY VARIABLES
 //==============================================================
-const   express = require("express"),
+var   express = require("express"),
         router = express.Router(),
         request = require("../models/request"),
-        validator = require("validatorjs"),
-        nodemailer = require("nodemailer");
+        validator = require("validatorjs");
+        // nodemailer = require("nodemailer");
+
+//                     NODEMAILER INFO
+//==============================================================
+// let transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'patronepatron@gmail.com',
+//         pass: 'GmailSchiller@741852963'
+//     }
+// });
 
 //                      ROUTES
 //==============================================================
-// INDEX 
+// ===================== INDEX 
 router.get("/", function(req, res){
     res.render("index.ejs",
     {  
@@ -28,51 +38,48 @@ router.get("/", function(req, res){
     req.session.posted = false;
 });
 
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'patronepatron@gmail.com',
-        pass: 'GmailSchiller@741852963'
-    }
-});
-
-// CREATE CONTACT REQUEST
+// ================ CREATE CONTACT REQUEST
 router.post("/post", function(req, res){
     req.session.posted = true;
-
+    // Consolidating user's inputs into object
     let formData = {
         name: req.body.name, 
         email: req.body.email, 
         message: req.body.message
     };
+    // Creating validation rules for each input field
     let rules = {
         name: 'required|string',
         email: 'required|string|email',
         message: 'required|string'
     };
-
+    // Setting user's inputs to a session object to pass through to 'GET' route
     req.session.name = formData.name;
     req.session.email = formData.email;
     req.session.message = formData.message;
 
+    // Creating a HTML template to be used in the email sent by NodeMailer
+    // const emailTemplate = `
+    //     <h3>Contact Details</h3>
+    //     <ul>
+    //         <li>Name: ${formData.name}</li>
+    //         <li>Email: ${formData.email}</li>
+    //         <li>Message: ${formData.message}</li>
+    //     </ul>
+    // `;
+
+    // Defining which email account to use, the subject name that will appear and the email's body template
+    // let mailOptions = {
+    //     from: 'patronepatron@gmail.com',
+    //     to: 'schiller.justin@gmail.com',
+    //     subject: 'WebDev Contact Request Form',
+    //     html: emailTemplate
+    // };
+
+    // New validation using the user's inputs and associated rules of each input field
     const validation = new validator(formData, rules);
 
-    const emailTemplate = `
-        <h3>Contact Details</h3>
-        <ul>
-            <li>Name: ${formData.name}</li>
-            <li>Email: ${formData.email}</li>
-            <li>Message: ${formData.message}</li>
-        </ul>
-    `;
-
-    let mailOptions = {
-        from: 'patronepatron@gmail.com',
-        to: 'schiller.justin@gmail.com',
-        subject: 'WebDev Contact Request Form',
-        html: emailTemplate
-    };
-
+    // If the post submission failed any of the validation rules...
     if (validation.fails()) {
         req.session.success = false;
 
@@ -85,7 +92,8 @@ router.post("/post", function(req, res){
         req.session.errorMessage = validation.errors.first("message");
 
         res.redirect("/");
-
+    
+    // If the post submission passes all validation rules
     } else {
         req.session.success = true;
         request.create(formData, function(error, dbmessage){
@@ -95,15 +103,16 @@ router.post("/post", function(req, res){
                 res.redirect("/");
             }
         });
-
-        transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-                console.log(error);
-            } else {
-                console.log("Contact request email sent!");
-                console.log(info);
-            }
-        });
+        
+        // After validation passes, send an email with the form's inputted info
+        // transporter.sendMail(mailOptions, function(error, info){
+        //     if (error) {
+        //         console.log(error);
+        //     } else {
+        //         console.log("Contact request email sent!");
+        //         console.log(info);
+        //     }
+        // });
     }
 });
 

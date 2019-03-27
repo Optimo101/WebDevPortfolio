@@ -39,11 +39,14 @@
 </div>
 
 <script>
+var requestForm = document.getElementById("requestForm");
+var successP = document.getElementById("successP");
+
     if (<%= posted %>){
         if (<%= success %>){
             // Scroll to form, display "success" message, reset form to default
-            document.getElementById("requestForm").scrollIntoView();
-            document.getElementById("successP").style.display = "block";
+            requestForm.scrollIntoView();
+            successP.style.display = "block";
         } else {
             // Scroll to form, display applicable errors and user's input data
             document.getElementById("requestForm").scrollIntoView();
