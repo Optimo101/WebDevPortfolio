@@ -1,20 +1,20 @@
-//                       DEPENDENCY VARIABLES
+//                   DEPENDENCY VARIABLES
 //==============================================================
 var   express = require("express"),
         router = express.Router(),
         request = require("../models/request"),
-        validator = require("validatorjs");
-        // nodemailer = require("nodemailer");
+        validator = require("validatorjs"),
+        nodemailer = require("nodemailer");
 
-//                     NODEMAILER INFO
+//                 NODEMAILER EMAIL ACCT INFO
 //==============================================================
-// let transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: 'patronepatron@gmail.com',
-//         pass: 'GmailSchiller@741852963'
-//     }
-// });
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'patronepatron@gmail.com',
+        pass: 'GmailSchiller@741852963'
+    }
+});
 
 //                      ROUTES
 //==============================================================
@@ -59,22 +59,22 @@ router.post("/post", function(req, res){
     req.session.message = formData.message;
 
     // Creating a HTML template to be used in the email sent by NodeMailer
-    // const emailTemplate = `
-    //     <h3>Contact Details</h3>
-    //     <ul>
-    //         <li>Name: ${formData.name}</li>
-    //         <li>Email: ${formData.email}</li>
-    //         <li>Message: ${formData.message}</li>
-    //     </ul>
-    // `;
+    const emailTemplate = `
+        <h3>Contact Form Details</h3>
+        <ul>
+            <li><b>Name:</b> ${formData.name}</li>
+            <li><b>Email:</b> ${formData.email}</li>
+            <li><b>Message:</b> ${formData.message}</li>
+        </ul>
+    `;
 
     // Defining which email account to use, the subject name that will appear and the email's body template
-    // let mailOptions = {
-    //     from: 'patronepatron@gmail.com',
-    //     to: 'schiller.justin@gmail.com',
-    //     subject: 'WebDev Contact Request Form',
-    //     html: emailTemplate
-    // };
+    let mailOptions = {
+        from: 'patronepatron@gmail.com',
+        to: 'schiller.justin@gmail.com',
+        subject: 'WebDev Contact Request Form',
+        html: emailTemplate
+    };
 
     // New validation using the user's inputs and associated rules of each input field
     const validation = new validator(formData, rules);
@@ -96,6 +96,13 @@ router.post("/post", function(req, res){
     // If the post submission passes all validation rules
     } else {
         req.session.success = true;
+        req.session.hasErrorName = false;
+        req.session.hasErrorEmail = false;
+        req.session.hasErrorMessage = false;
+        req.session.errorName = false;
+        req.session.errorEmail = false;
+        req.session.errorMessage = false;
+
         request.create(formData, function(error, dbmessage){
             if(error){
                 console.log(error);
@@ -105,14 +112,14 @@ router.post("/post", function(req, res){
         });
         
         // After validation passes, send an email with the form's inputted info
-        // transporter.sendMail(mailOptions, function(error, info){
-        //     if (error) {
-        //         console.log(error);
-        //     } else {
-        //         console.log("Contact request email sent!");
-        //         console.log(info);
-        //     }
-        // });
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log("Contact request email sent!");
+                console.log(info);
+            }
+        });
     }
 });
 
