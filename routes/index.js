@@ -1,18 +1,21 @@
 //                   DEPENDENCY VARIABLES
 //==============================================================
-var   express = require("express"),
+var     express = require("express"),
         router = express.Router(),
         request = require("../models/request"),
         validator = require("validatorjs"),
         nodemailer = require("nodemailer");
+
+        require('dotenv').config();
+
 
 //                 NODEMAILER EMAIL ACCT INFO
 //==============================================================
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'patronepatron@gmail.com',
-        pass: 'GmailSchiller@741852963'
+        user: process.env.USER,
+        pass: process.env.PASSWORD
     }
 });
 
