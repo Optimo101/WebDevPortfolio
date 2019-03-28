@@ -83,18 +83,27 @@
     font-size: 12pt;
 }
 
-#contact-container-form p:nth-of-type(n+1) {
+#contact-container-form p:nth-of-type(1) {
     color: crimson;
     text-align: left;
-    margin: -8px 0px -3px 0px;
+    margin: -19px 0px -14px 0px;
     padding-left: 25px;
     line-height: 10pt;
     font-size: 10pt;
 }
 
-#contact-container-form p:nth-of-type(n+2) {
+#contact-container-form p:nth-of-type(2) {
     color: crimson;
-    margin: -2px 0px 0px 0px;
+    text-align: left;
+    margin: -19px 0px -14px 0px;
+    padding-left: 25px;
+    line-height: 10pt;
+    font-size: 10pt;
+}
+
+#contact-container-form p:nth-last-of-type(1) {
+    color: crimson;
+    margin: -4px 0px -0px 0px;
     padding-left: 25px;
     text-align: left;
     line-height: 10pt;
@@ -104,7 +113,7 @@
 #container-contact-section input {
     width: 90%;
     height: 35px;
-    margin: 5px auto;
+    margin: 20px auto;
     display: block;
     font-size: 12pt;
     color: white;
@@ -139,7 +148,7 @@
 #container-contact-section button {
     height: 35px;
     background-color: transparent;
-    margin: 5px 5% 0px 0px;
+    margin: 0 5% 0 0;
     padding: 10px 30px;
     font-size: 12pt;
     line-height: 8px;

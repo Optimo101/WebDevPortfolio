@@ -1,9 +1,9 @@
-var express = require("express"),
-    app = express(),
-    bodyParser = require("body-parser"),
-    mongoose = require("mongoose"),
-    indexRoutes = require("./routes/index");
-    var session = require("express-session")
+var     express = require("express"),
+        app = express(),
+        bodyParser = require("body-parser"),
+        mongoose = require("mongoose"),
+        indexRoutes = require("./routes/index"),
+        session = require("express-session");
 
 //============================================================
 app.use(express.static(__dirname + "/public"));
@@ -15,6 +15,6 @@ mongoose.connect("mongodb://localhost:27017/portfoliodb", {useNewUrlParser: true
 app.use(indexRoutes);
 
 //============================================================
-app.listen(3000, "localhost",function(){
+app.listen(3000, "localhost", function(){
     console.log("Server started...");
 });

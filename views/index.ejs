@@ -23,9 +23,9 @@
             
                 <div id="successP" class="no-display"><i id="successIcon" class="fas fa-check-circle"></i> Your message has been sent!</div>
                 <div id="failP" class="no-display"><i id="failIcon" class="fas fa-exclamation-circle"></i> There are items that require your attention.</div>
-                <p id="errorNameP" class="no-display"></p>
 
                 <input id="nameInputId" type="text" name="name" placeholder="Name">
+                <p id="errorNameP" class="no-display"></p>
 
                 <input id="emailInputId" type="email" name="email" placeholder="Email">
                 <p id="errorEmailP" class="no-display"></p>
@@ -40,48 +40,45 @@
 
 <script>
     if (<%= posted %>){
-        if (<%= success %>){
-            // Scroll to form, display "success" message, reset form to default
-            document.getElementById("requestForm").scrollIntoView();
-            document.getElementById("successP").style.display = "block";
-        } else {
-            // Scroll to form, display applicable errors and user's input data
-            document.getElementById("requestForm").scrollIntoView();
-            document.getElementById("failP").style.display = "block";
-
-            if (<%= hasErrorName %>){
-                document.getElementById("errorNameP").innerHTML = "<%= errorName %>";
-                document.getElementById('nameInputId').value = "<%= userName %>";
-                document.getElementById("nameInputId").className += " errorInputBorder";
-                document.getElementById("errorNameP").style.display = "block";
-            } else {
-                document.getElementById("errorNameP").style.display = "none";
-                document.getElementById('nameInputId').value = "<%= userName %>";
-                document.getElementById("nameInputId").className -= " errorInputBorder";
-            }
-
-            if (<%= hasErrorEmail %>){
-                document.getElementById("errorEmailP").innerHTML = "<%= errorEmail %>";
-                document.getElementById('emailInputId').value = "<%= userEmail %>";
-                document.getElementById("emailInputId").className += " errorInputBorder";
-                document.getElementById("errorEmailP").style.display = "block";
-            } else {
-                document.getElementById("errorEmailP").style.display = "none";
-                document.getElementById('emailInputId').value = "<%= userEmail %>";
-                document.getElementById("emailInputId").className -= " errorInputBorder";
-            }
-
-            if (<%= hasErrorMessage %>){
-                document.getElementById("errorMessageP").innerHTML = "<%= errorMessage %>";
-                document.getElementById('messageInputId').value = "<%= userMessage %>";
-                document.getElementById("messageInputId").className += " errorInputBorder";
-                document.getElementById("errorMessageP").style.display = "block";
-            } else {
-                document.getElementById("errorMessageP").style.display = "none";
-                document.getElementById('messageInputId').value = "<%= userMessage %>";
-                document.getElementById("messageInputId").className -= " errorInputBorder";
-            }
-        }
+        document.getElementById("requestForm").scrollIntoView();
     }
+    if (<%= success %>){
+        // Scroll to form, display "success" message, reset form to default
+        document.getElementById("successP").style.display = "block";
+    } else {
+        // Scroll to form, display applicable errors and user's input data
+        document.getElementById("failP").style.display = "block";
+        if (<%= hasErrorName %>){
+            document.getElementById("errorNameP").innerHTML = "<%= errorName %>";
+            document.getElementById('nameInputId').value = "<%= userName %>";
+            document.getElementById("nameInputId").className += " errorInputBorder";
+            document.getElementById("errorNameP").style.display = "block";
+        } else {
+            document.getElementById("errorNameP").style.display = "none";
+            document.getElementById('nameInputId').value = "<%= userName %>";
+            document.getElementById("nameInputId").className -= " errorInputBorder";
+        }
+        if (<%= hasErrorEmail %>){
+            document.getElementById("errorEmailP").innerHTML = "<%= errorEmail %>";
+            document.getElementById('emailInputId').value = "<%= userEmail %>";
+            document.getElementById("emailInputId").className += " errorInputBorder";
+            document.getElementById("errorEmailP").style.display = "block";
+        } else {
+            document.getElementById("errorEmailP").style.display = "none";
+            document.getElementById('emailInputId').value = "<%= userEmail %>";
+            document.getElementById("emailInputId").className -= " errorInputBorder";
+        }
+        if (<%= hasErrorMessage %>){
+            document.getElementById("errorMessageP").innerHTML = "<%= errorMessage %>";
+            document.getElementById('messageInputId').value = "<%= userMessage %>";
+            document.getElementById("messageInputId").className += " errorInputBorder";
+            document.getElementById("errorMessageP").style.display = "block";
+        } else {
+            document.getElementById("errorMessageP").style.display = "none";
+            document.getElementById('messageInputId').value = "<%= userMessage %>";
+            document.getElementById("messageInputId").className -= " errorInputBorder";
+        }
+    }  
 </script>
+
 <% include partials/footer %>
