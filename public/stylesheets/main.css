@@ -1,14 +1,26 @@
 /* GENERAL */
 * {
-    font-family: 'Raleway', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* Font-Family: 'Bree Serif', Serif;
+    Font-Size: 43px; */
+    Font-Family: 'Bree', Serif;
+    /* Font-Size: 17px; */
 }
 
 body {
     z-index: -10;
-    background-color: steelblue;
+    background-color: #b1cbb3;
+    margin: 0 auto;
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+}
+
+.paper {
+    margin-top: 130px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: #fff;
 }
 
 a:hover, a:visited, a:active, a:link {
@@ -16,8 +28,9 @@ a:hover, a:visited, a:active, a:link {
 }
 
 .main-wrapper {
-    width: 80vw;
-    margin: 0 auto;
+    width: 75vw;
+    margin: auto;
+    max-width: 1200px;
 }
 
  /* === UNIVERSAL CLASSES === */
