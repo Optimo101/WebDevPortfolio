@@ -1,3 +1,41 @@
 #about {
-  height: calc(100vh - 70px);
+  /* height: calc(100vh - 70px); */
 }
+
+.about-section {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: minmax(150px, 1fr) 3fr;
+}
+
+.about-section .header1 {
+  background-color: turquoise;
+}
+
+
+.header1 img {
+  position: relative;
+  max-width: 125px;
+  margin: 35px auto -65px auto;
+  border-radius: 50%;
+  display: block;
+}
+
+.about-section .header2 {
+  background-color: turquoise;
+}
+
+.about-section .sidebar {
+  background-color: grey;
+  padding: 20px;
+}
+
+
+.about-section .body {
+  padding: 20px;
+}
+
+.about-section .body .summary {
+  text-align: center;
+}
+
