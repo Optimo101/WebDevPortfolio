@@ -4,47 +4,84 @@
 
 .about-section {
   display: grid;
-  grid-template-rows: 1fr 4fr;
-  grid-template-columns: minmax(150px, 1fr) 3fr;
+  grid-template-rows: 150px;
+  grid-template-columns: minmax(230px, 1fr) 3fr;
 }
 
 .about-section .header1 {
-  background-color: turquoise;
+  background-color: olivedrab;
 }
 
 
 .header1 img {
   position: relative;
-  max-width: 125px;
-  margin: 35px auto -65px auto;
+  bottom: -60px;
+  max-width: 175px;
+  margin: 0 auto 0 auto;
   border-radius: 50%;
   display: block;
+  border: 5px solid white;
 }
 
 .about-section .header2 {
-  background-color: turquoise;
+  background-color: olivedrab;
 }
 
 .about-section .sidebar {
-  background-color: grey;
-  padding: 20px;
+  background-color: darkolivegreen;
+  padding: 15px;
 }
 
+.sidebar .card-container {
+  position: relative;
+  left: -110px;
+  bottom: -80px;
+  background-color: linen;
+  height: 2in;
+  width: 3.5in;
+  transform: rotate(15deg);
+}
+
+.card-container .card-content {
+  text-align: center;
+}
+
+.sidebar .tech-container {
+  margin-top: 100px;
+}
 
 .about-section .body {
-  padding: 20px;
+  padding: 15px;
 }
 
 .about-section .body .summary {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .about-section .body .values-container {
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
 }
 
 .values-container .value-container {
   display: inline-block;
-  width: 100px;
-  height: 200px;
+  width: 150px;
+  height: 300px;
+}
+
+#value1 {
+  background-color: skyblue;
+}
+#value2 {
+  background-color: lightcoral;
+}
+#value3 {
+  background-color: lightgreen
+}
+#value4 {
+  background-color: gold;
 }
