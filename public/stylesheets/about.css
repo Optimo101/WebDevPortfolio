@@ -39,3 +39,12 @@
   text-align: center;
 }
 
+.about-section .body .values-container {
+  text-align: center;
+}
+
+.values-container .value-container {
+  display: inline-block;
+  width: 100px;
+  height: 200px;
+}
