@@ -5,7 +5,7 @@
 .about-section {
   display: grid;
   grid-template-rows: 150px;
-  grid-template-columns: minmax(260px, 1fr) 3fr;
+  grid-template-columns: minmax(265px, 1fr) 3fr;
 }
 
 .about-section .header1 {
@@ -62,10 +62,19 @@
   margin-top: 120px;
 }
 
+.tech-container h3 {
+  margin: 0 0 0 30px;
+  font-weight: 700;
+  font-size: 16pt;
+}
+
 .tech-list {
+  border-top: 2px solid slategrey;
+  border-left: 2px solid slategrey;
+  border-radius: 30px 0 0 0;
   list-style-type: none;
   font-size: 20pt;
-  padding: 0;
+  padding-top: 15px;
   text-align: center;
 }
 
@@ -103,7 +112,7 @@
 
 .about-section .values-container-grid {
   display: grid;
-  grid-template-rows: ;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   margin: 40px auto 0 auto;
   max-width: 600px;
@@ -111,11 +120,48 @@
 }
 
 .values-container-grid .value-container {
+  position: relative;
   width: 100%;
   height: 0;
   padding-top: 100%;
 }
 
+.values-container-grid .absolute {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
+
+.absolute .value-content-top {
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+}
+
+.value-content-top i {
+  font-size: 125px;
+}
+
+.value-content-top h4 {
+  margin: 0 0 15px 0;
+}
+
+
+.absolute .value-content-bottom {
+  text-align: center;
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+}
+
+.value-content-bottom i {
+  font-size: 125px;
+}
+
+.value-content-bottom h4 {
+  margin: 15px 0 0 0;
+}
 
 
 #value1 {
@@ -125,30 +171,28 @@
   border-left: 1px solid slategrey;
   border-top: 1px solid slategrey;
   border-radius: 40px 40px 0px 40px;
-
 }
+
 #value2 {
   background-color: lightcoral;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%);
   border-right: 1px solid slategrey;
   border-top: 1px solid slategrey;
   border-radius: 40px 40px 40px 0px;
-
-
 }
+
 #value3 {
   background-color: lightgreen;
   clip-path: polygon(0 0, 50% 0, 100% 50%, 100% 100%, 0 100%);
   border-left: 1px solid slategrey;
   border-bottom: 1px solid slategrey;
   border-radius: 40px 40px 40px 0px;
-
 }
+
 #value4 {
   background-color: gold;
   clip-path: polygon(0 50%, 50% 0, 100% 0, 100% 100%, 0 100%);
   border-right: 1px solid slategrey;
   border-bottom: 1px solid slategrey;
   border-radius: 0px 40px 40px 40px;
-
 }
