@@ -9,7 +9,7 @@
 }
 
 .about-section .header1 {
-  background-color: olivedrab;
+  background-color: #d2e6d4;
 }
 
 
@@ -24,19 +24,19 @@
 }
 
 .about-section .header2 {
-  background-color: olivedrab;
+  background-color: #d2e6d4;
 }
 
 .about-section .sidebar {
-  background-color: darkolivegreen;
-  padding: 15px;
+  background-color: #b1cbb3;
+  padding: 20px;
 }
 
 .sidebar .card-container {
   position: relative;
   left: -90px;
   bottom: -80px;
-  background-color: rgb(241, 241, 241);
+  background-image: url("../backgrounds/groovepaper.png");
   height: 162px;
   width: 306px;
   transform: rotate(15deg);
@@ -56,10 +56,6 @@
   width: 97%;
   height: 94%;
   margin: auto auto;
-}
-
-.card-content h4 {
-  margin: 0;
 }
 
 .sidebar .tech-container {
@@ -94,38 +90,65 @@
 
 
 .about-section .body {
-  padding: 15px;
-  background-color: ghostwhite;
+  padding: 20px;
+  background-image: url("../backgrounds/paper_fibers.png");
 }
 
-.about-section .body .summary {
+.about-section .summary {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
 }
 
-.about-section .body .values-container {
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+
+.about-section .values-container-grid {
+  display: grid;
+  grid-template-rows: ;
+  grid-template-columns: 1fr 1fr;
+  margin: 40px auto 0 auto;
+  max-width: 600px;
 
 }
 
-.values-container .value-container {
-  display: inline-block;
-  width: 150px;
-  height: 300px;
+.values-container-grid .value-container {
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
 }
+
+
 
 #value1 {
+  margin-left: auto;
   background-color: skyblue;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 100%);
+  border-left: 1px solid slategrey;
+  border-top: 1px solid slategrey;
+  border-radius: 40px 40px 0px 40px;
+
 }
 #value2 {
   background-color: lightcoral;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%);
+  border-right: 1px solid slategrey;
+  border-top: 1px solid slategrey;
+  border-radius: 40px 40px 40px 0px;
+
+
 }
 #value3 {
-  background-color: lightgreen
+  background-color: lightgreen;
+  clip-path: polygon(0 0, 50% 0, 100% 50%, 100% 100%, 0 100%);
+  border-left: 1px solid slategrey;
+  border-bottom: 1px solid slategrey;
+  border-radius: 40px 40px 40px 0px;
+
 }
 #value4 {
   background-color: gold;
+  clip-path: polygon(0 50%, 50% 0, 100% 0, 100% 100%, 0 100%);
+  border-right: 1px solid slategrey;
+  border-bottom: 1px solid slategrey;
+  border-radius: 0px 40px 40px 40px;
+
 }
