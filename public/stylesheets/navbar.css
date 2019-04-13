@@ -65,7 +65,7 @@ nav {
     cursor: pointer;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 719px) {
     #hamburger {
         display: block;
     }
@@ -75,7 +75,7 @@ nav {
     }
 }
 
-@media screen and (min-width: 861px) {
+@media screen and (min-width: 720px) {
     #nav-mobile-menu-container {
         display: none;
     }

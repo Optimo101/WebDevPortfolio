@@ -25,18 +25,21 @@ a:hover, a:visited, a:active, a:link {
     text-decoration: none;
 }
 
-@media screen and (min-width:861px) {
 .main-wrapper {
     width: 80vw;
     margin: auto;
     max-width: 1200px;
 }
-}
-@media screen and (max-width:860px) {
+
+@media screen and (max-width:1023px) {
     .main-wrapper {
         width: 90vw;
         margin: auto;
-        min-width: 450px;
+    }
+}
+@media screen and (max-width:719px) {
+    .main-wrapper {
+        width: 100vw;
     }
 }
 
