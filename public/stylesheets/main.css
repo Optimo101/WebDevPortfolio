@@ -61,6 +61,14 @@ a:hover, a:visited, a:active, a:link {
     display: none;
 }
 
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 .red-border {
     border: 1px dotted red;
 }
