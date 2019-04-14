@@ -1,14 +1,24 @@
 /* GENERAL */
 * {
-    font-family: 'Raleway', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
 }
 
 body {
     z-index: -10;
-    background-color: steelblue;
+    background-image: url("../backgrounds/grey_wash_wall.png");
+    margin: 0 auto;
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+}
+
+.paper {
+    margin-top: 130px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: #fff;
 }
 
 a:hover, a:visited, a:active, a:link {
@@ -17,7 +27,20 @@ a:hover, a:visited, a:active, a:link {
 
 .main-wrapper {
     width: 80vw;
-    margin: 0 auto;
+    margin: auto;
+    max-width: 1200px;
+}
+
+@media screen and (max-width:1023px) {
+    .main-wrapper {
+        width: 90vw;
+        margin: auto;
+    }
+}
+@media screen and (max-width:719px) {
+    .main-wrapper {
+        width: 100vw;
+    }
 }
 
  /* === UNIVERSAL CLASSES === */
@@ -37,6 +60,18 @@ a:hover, a:visited, a:active, a:link {
 .no-display {
     display: none;
 }
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.height-zero {
+    height: 0;
+  }
 
 .red-border {
     border: 1px dotted red;
