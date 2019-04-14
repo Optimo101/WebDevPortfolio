@@ -121,13 +121,17 @@ let flex4Summary = document.getElementById("flex4-summary");
 flex1.addEventListener("mouseover", function(){
     flex1Title.classList.add("hidden");
     flex1Title.style.opacity = 0;
+    flex1Title.style.width = "0";
+    flex1Title.style.marginLeft = "0";
     flex1Summary.classList.remove("hidden");
+    flex1Summary.classList.remove("height-zero");
     flex1Summary.style.opacity = 1;
     flex1Icon.style.transform = "scale(1.3)";
 });
 flex1.addEventListener("mouseout", function(){
     flex1Title.classList.remove("hidden");
     flex1Title.style.opacity = 1;
+    flex1Title.style.marginLeft = "5%";
     flex1Summary.classList.add("hidden");
     flex1Summary.style.opacity = 0;
     flex1Icon.style.transform = "scale(1)";
@@ -136,13 +140,17 @@ flex1.addEventListener("mouseout", function(){
 flex2.addEventListener("mouseover", function(){
     flex2Title.classList.add("hidden");
     flex2Title.style.opacity = 0;
+    flex2Title.style.width = "0";
+    flex2Title.style.marginLeft = "0";
     flex2Summary.classList.remove("hidden");
+    flex2Summary.classList.remove("height-zero");
     flex2Summary.style.opacity = 1;
     flex2Icon.style.transform = "scale(1.3)";
 });
 flex2.addEventListener("mouseout", function(){
     flex2Title.classList.remove("hidden");
     flex2Title.style.opacity = 1;
+    flex2Title.style.marginLeft = "5%";
     flex2Summary.classList.add("hidden");
     flex2Summary.style.opacity = 0;
     flex2Icon.style.transform = "scale(1)";
@@ -151,13 +159,17 @@ flex2.addEventListener("mouseout", function(){
 flex3.addEventListener("mouseover", function(){
     flex3Title.classList.add("hidden");
     flex3Title.style.opacity = 0;
+    flex3Title.style.width = "0";
+    flex3Title.style.marginLeft = "0";
     flex3Summary.classList.remove("hidden");
+    flex3Summary.classList.remove("height-zero");
     flex3Summary.style.opacity = 1;
     flex3Icon.style.transform = "scale(1.3)";
 });
 flex3.addEventListener("mouseout", function(){
     flex3Title.classList.remove("hidden");
     flex3Title.style.opacity = 1;
+    flex3Title.style.marginLeft = "5%";
     flex3Summary.classList.add("hidden");
     flex3Summary.style.opacity = 0;
     flex3Icon.style.transform = "scale(1)";
@@ -166,13 +178,17 @@ flex3.addEventListener("mouseout", function(){
 flex4.addEventListener("mouseover", function(){
     flex4Title.classList.add("hidden");
     flex4Title.style.opacity = 0;
+    flex4Title.style.width = "0";
+    flex4Title.style.marginLeft = "0";
     flex4Summary.classList.remove("hidden");
+    flex4Summary.classList.remove("height-zero");
     flex4Summary.style.opacity = 1;
     flex4Icon.style.transform = "scale(1.3)";
 });
 flex4.addEventListener("mouseout", function(){
     flex4Title.classList.remove("hidden");
     flex4Title.style.opacity = 1;
+    flex4Title.style.marginLeft = "5%";
     flex4Summary.classList.add("hidden");
     flex4Summary.style.opacity = 0;
     flex4Icon.style.transform = "scale(1)";
