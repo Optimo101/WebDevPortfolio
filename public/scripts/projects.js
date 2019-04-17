@@ -80,8 +80,8 @@
 
     // Focus effect when hovering over projects 
     projectBox1.addEventListener("mouseover", function(){
-        projectBox2.style.opacity = ".5";
-        projectBox3.style.opacity = ".5";
+        projectBox2.style.opacity = ".6";
+        projectBox3.style.opacity = ".6";
         title1.style.fontWeight = "700";
         summary1.style.fontWeight = "400";
     });
@@ -94,8 +94,8 @@
     });
 
     projectBox2.addEventListener("mouseover", function(){
-        projectBox1.style.opacity = ".5";
-        projectBox3.style.opacity = ".5";
+        projectBox1.style.opacity = ".6";
+        projectBox3.style.opacity = ".6";
         title2.style.fontWeight = "700";
         summary2.style.fontWeight = "400";
 
@@ -109,8 +109,8 @@
     });
 
     projectBox3.addEventListener("mouseover", function(){
-        projectBox1.style.opacity = ".5";
-        projectBox2.style.opacity = ".5";
+        projectBox1.style.opacity = ".6";
+        projectBox2.style.opacity = ".6";
         title3.style.fontWeight = "700";
         summary3.style.fontWeight = "400";
 
