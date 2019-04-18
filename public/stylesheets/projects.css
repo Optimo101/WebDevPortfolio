@@ -16,7 +16,7 @@
 #coffee-stain-container img {
   height: 340px;
   max-width: initial;
-  opacity: .7;
+  opacity: .8;
 }
 
 .project-section .title-container {
@@ -188,7 +188,7 @@
     justify-content: flex-start;
     position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
-    padding-top: 80px;
+    padding-top: 70px;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -201,7 +201,7 @@
   /* Modal Box (content) */
   .project-section .modal-content {
     background-color: whitesmoke;
-    margin: 50px auto;
+    margin: 25px auto 75px auto;
     border: 1px solid black;
     width: 90%; /* Could be more or less, depending on screen size */
     max-width: 600px;
@@ -221,16 +221,18 @@
 
   .modal-meta-info h2 {
     margin: 0;
+    font-weight: 700;
   }
 
   .modal-meta-info h4 {
     margin: 5px 0;
+    font-weight: 400;
   }
 
   .modal-meta-info hr {
       height: 1px;
       color: black;
-      background-color: lightgrey;
+      background-color: black;
       margin: 10px 0 15px 0;
   }
 
@@ -244,8 +246,8 @@
     width: 120px;
     padding: 10px 20px 10px 20px;
     text-align: center;
-    background-color: #d2e6d4;
-    border: 3px solid #b1cbb3;
+    background-color: #b1cbb3;
+    border: 1px solid rgb(51, 50, 50);
     font-size: 12pt;
     text-transform: uppercase;
     color: black;
@@ -255,7 +257,7 @@
 
   .modal-meta-info a:hover {
     color: black;
-    background-color: #e0f5e2;
+    background-color: #d2e6d4;
   }
 
  .modal-meta-info a i {
@@ -270,7 +272,7 @@
     float: right;
     font-size: 25px;
     margin-top: 17px;
-    opacity: .5;
+    opacity: .6;
     transition: opacity 0.5s ease;
 
   }
