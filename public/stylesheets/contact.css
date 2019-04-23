@@ -44,6 +44,7 @@
 
 
 .contact-section #container-h2 {
+    position: relative;
     padding: 0px 0px 50px 0px;
     text-align: center;
 }
@@ -60,6 +61,7 @@
 }
 
 #paragraph-container {
+    position: relative;
     max-width: 300px;
     margin: 0 auto;
 }
@@ -71,6 +73,22 @@
     font-size: 14pt;
     font-weight: 400;
 }
+
+#envelope {
+    position: absolute;
+    top: -170px;
+    right: -550px;
+    z-index: 1;
+    transform: rotate(50deg);
+    box-shadow: 2px 1px 1px rgba(0,0,0,0.2), 2px 2px 2px rgba(0,0,0,0.34);
+}
+
+@media screen and (max-width:860px) {
+    #envelope {
+        display: none;
+    } 
+}
+
 
 #contact-form-container {
     max-width: 470px;
@@ -195,14 +213,3 @@
     background-color: #89a58b;
 }
 
-#envelope {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    width: 525px;
-    transform: rotate(50deg);
-    margin-bottom: 400px;
-    margin-right: 0px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
