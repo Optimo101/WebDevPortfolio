@@ -15,93 +15,126 @@
     z-index:0;
 }
 .contact-section .paperclips img:nth-of-type(1) {
-    margin-left: -125px;
+    left: -125;
 }
 .contact-section .paperclips img:nth-of-type(2) {
     transform: rotate(-30deg);
-    margin-left: -125px;
+    left: -125;
 }
 .contact-section .paperclips img:nth-of-type(3) {
     transform: rotate(-45deg);
-    margin-left: -150px;
-    margin-top: -110px;
+    left: -150;
+    top: -110;
 }
 .contact-section .paperclips img:nth-of-type(4) {
     transform: rotate(-135deg);
-    margin-left: -170px;
-    margin-top: 80px;
+    left: -170;
+    top: 80;
 }
 .contact-section .paperclips img:nth-of-type(5) {
     transform: rotate(-60deg);
-    margin-left: -100px;
-    margin-top: 200px;
+    left: -100;
+    top: 200;
 }
 .contact-section .paperclips img:nth-of-type(6) {
     transform: rotate(120deg);
-    margin-left: -115px;
-    margin-top: -160px;
+    left: -115;
+    top: -160;
 }
 
-.binder-clips img {
-    width: 260px;
-    position: absolute;
-    left: -35px;
+@media screen and (min-width:961px) {
+    .binder-clips img {
+        width: 260;
+        position: absolute;
+        left: -30;
+        transform: rotate(91deg);
+    }
+    .binder-clips img:nth-of-type(1) {
+        bottom: 450;
+    }
+    .binder-clips img:nth-of-type(2) {
+        bottom: 200;
+    }
+    .binder-clips img:nth-of-type(3) {
+        bottom: 80;
+    }
 
-}
-.binder-clips img:nth-of-type(1) {
-    transform: rotate(90deg);
-    top: 0px;
-}
-.binder-clips img:nth-of-type(2) {
-    transform: rotate(90deg);
-    top: 120px;
-}
-.binder-clips img:nth-of-type(3) {
-    transform: rotate(90deg);
-    top: 250px;
-}
-.binder-clips img:nth-of-type(4) {
-    transform: rotate(90deg);
-    top: 410px;
-}
-
-.binder-clips a{
-    position: absolute;
-    top: 0;
-    left: 0px;
-    font-size: 40px;
-    color: #af4c4c;
-    transition: color 0.5s ease;
-    z-index: 1;
-}
-
-.binder-clips a:hover {
-    color: #89a58b;
-}
-
-
-.binder-clips a:nth-of-type(1){
-    top: 110px;
-}
-.binder-clips a:nth-of-type(2){
-    top: 230px;
-}
-.binder-clips a:nth-of-type(3){
-    top: 360px;
-}
-.binder-clips a:nth-of-type(4){
-    top: 520px;
-    left: 3px;
+    .binder-clips a {
+        position: absolute;
+        top: 0;
+        left: 5;
+        font-size: 40px;
+        color: grey;
+        transition: color 0.5s ease;
+        z-index: 1;
+    }
+    .binder-clips a:hover {
+        color: #b1cbb3;
+    }
+    .binder-clips a:nth-of-type(1){
+        top: 110px;
+    }
+    .binder-clips a:nth-of-type(2){
+        top: 360px;
+    }
+    .binder-clips a:nth-of-type(3){
+        top: 480px;
+    }
 }
 
-
-
-
-
+@media screen and (max-width:960px) {
+    .binder-clips {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 450px;
+        margin-left: -225px;
+    }
+    
+    .binder-clips img {
+        width: 180px;
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        transform: rotate(1deg);
+    }
+    .binder-clips img:nth-of-type(1) {
+        left: 100;
+    }
+    .binder-clips img:nth-of-type(2) {
+        left: 185;
+    }
+    .binder-clips img:nth-of-type(3) {
+        left: 280;
+    }
+    
+    .binder-clips a {
+        position: absolute;
+        bottom: 3;
+        left: 0;
+        font-size: 30px;
+        color: grey;
+        transition: color 0.5s ease;
+        z-index: 1;
+    }
+    .binder-clips a:hover {
+        color: #b1cbb3;
+    }
+    .binder-clips a:nth-of-type(1){
+        left: 174;
+    }
+    .binder-clips a:nth-of-type(2){
+        left: 262;
+        bottom: 1;
+    }
+    .binder-clips a:nth-of-type(3){
+        left: 356;
+    }
+}
 
 .contact-section #container-h2 {
     position: relative;
-    padding: 0px 0px 50px 0px;
+    padding: 0px 0px 35px 0px;
     text-align: center;
 }
 
@@ -128,13 +161,14 @@
     color: black;
     font-size: 14pt;
     font-weight: 400;
+    margin: 0;
 }
 
 #envelope {
     position: absolute;
     top: -50px;
-    right: -590px;
-    z-index: 1;
+    right: -735px;
+    z-index: -1;
     transform: rotate(50deg);
     box-shadow: 2px 1px 1px rgba(0,0,0,0.2), 2px 2px 2px rgba(0,0,0,0.34);
 }
@@ -149,7 +183,7 @@
 #contact-form-container {
     max-width: 450px;
     margin: 0 auto;
-    padding: 0 0 155px 0;
+    padding: 0 0 180px 0;
 }
 
 #successP {
@@ -237,7 +271,7 @@
 .contact-section textarea {
     width: 90%;
     height: 150px;
-    margin: 20px auto 5px auto;
+    margin: 20px auto 10px auto;
     padding: 10px;
     background-image: url("../backgrounds/paper_fibers.png");
     border: 1px solid black;
@@ -269,3 +303,91 @@
     background-color: #89a58b;
 }
 
+
+#usb-drive-container {
+    position: absolute;
+    left: -100;
+    bottom: 425;
+    width: 240;
+    height: 74px;
+    transform: rotate(20deg);
+}
+
+@media screen and (max-width:960px) {
+    #usb-drive-container {
+        left: 50%;
+        margin-left: -320px;
+        bottom: 60;
+        transform: rotate(15deg);
+    }
+}
+
+@media screen and (max-width:719px) {
+    #usb-drive-container {
+        left: 50%;
+        margin-left: -280px;
+        bottom: -30;
+        transform: rotate(-70deg);
+    }
+}
+
+#usb-flash-drive {
+    position: absolute;
+    width: 2.5in;
+    z-index: 2;
+}
+
+#resume-download {
+    position: absolute;
+    right: 10;
+    bottom: 15;
+    z-index: 4;
+    font-size: 40px;
+    color: #7caa80;
+    transition: color .30s ease-in-out;
+}
+
+#usb-drive-container:hover #resume-download {
+    color: rgb(90, 236, 90);
+}
+
+#usb-light {
+    position: absolute;
+    bottom: 32;
+    right: 81;
+    border-radius: 100px;
+    background-color: darkred;
+    width: 5px;
+    height: 5px;
+    z-index: 5;
+    padding:1px;
+    transition: background-color .25s ease-in-out;
+    transition: box-shadow .25s ease-in-out;
+
+}
+
+#usb-drive-container:hover #usb-light {
+    background-color: red;
+    box-shadow: 0 00 5px 2px red;
+}
+
+#usb-flash-drive-shadow1 {
+    position: absolute;
+    bottom: 5;
+    right: 2;
+    width: 193px;
+    height: 62px;
+    box-shadow: -4px 6px 5px 2px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#usb-flash-drive-shadow2 {
+    position: absolute;
+    bottom: 17;
+    left: 0;
+    width: 45px;
+    height: 40px;
+    box-shadow: -4px 6px 4px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+
+}
