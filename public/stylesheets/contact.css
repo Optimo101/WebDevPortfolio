@@ -14,33 +14,89 @@
     left: 0;
     z-index:0;
 }
-.contact-section img:nth-of-type(1) {
+.contact-section .paperclips img:nth-of-type(1) {
     margin-left: -125px;
 }
-.contact-section img:nth-of-type(2) {
+.contact-section .paperclips img:nth-of-type(2) {
     transform: rotate(-30deg);
     margin-left: -125px;
 }
-.contact-section img:nth-of-type(3) {
+.contact-section .paperclips img:nth-of-type(3) {
     transform: rotate(-45deg);
     margin-left: -150px;
     margin-top: -110px;
 }
-.contact-section img:nth-of-type(4) {
+.contact-section .paperclips img:nth-of-type(4) {
     transform: rotate(-135deg);
     margin-left: -170px;
     margin-top: 80px;
 }
-.contact-section img:nth-of-type(5) {
+.contact-section .paperclips img:nth-of-type(5) {
     transform: rotate(-60deg);
     margin-left: -100px;
     margin-top: 200px;
 }
-.contact-section img:nth-of-type(6) {
+.contact-section .paperclips img:nth-of-type(6) {
     transform: rotate(120deg);
     margin-left: -115px;
     margin-top: -160px;
 }
+
+.binder-clips img {
+    width: 260px;
+    position: absolute;
+    left: -35px;
+
+}
+.binder-clips img:nth-of-type(1) {
+    transform: rotate(90deg);
+    top: 0px;
+}
+.binder-clips img:nth-of-type(2) {
+    transform: rotate(90deg);
+    top: 120px;
+}
+.binder-clips img:nth-of-type(3) {
+    transform: rotate(90deg);
+    top: 250px;
+}
+.binder-clips img:nth-of-type(4) {
+    transform: rotate(90deg);
+    top: 410px;
+}
+
+.binder-clips a{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 40px;
+    color: #af4c4c;
+    transition: color 0.5s ease;
+    z-index: 1;
+}
+
+.binder-clips a:hover {
+    color: #89a58b;
+}
+
+
+.binder-clips a:nth-of-type(1){
+    top: 110px;
+}
+.binder-clips a:nth-of-type(2){
+    top: 230px;
+}
+.binder-clips a:nth-of-type(3){
+    top: 360px;
+}
+.binder-clips a:nth-of-type(4){
+    top: 520px;
+    left: 3px;
+}
+
+
+
+
 
 
 .contact-section #container-h2 {
@@ -76,8 +132,8 @@
 
 #envelope {
     position: absolute;
-    top: -170px;
-    right: -550px;
+    top: -50px;
+    right: -590px;
     z-index: 1;
     transform: rotate(50deg);
     box-shadow: 2px 1px 1px rgba(0,0,0,0.2), 2px 2px 2px rgba(0,0,0,0.34);
@@ -91,7 +147,7 @@
 
 
 #contact-form-container {
-    max-width: 470px;
+    max-width: 450px;
     margin: 0 auto;
     padding: 0 0 155px 0;
 }
@@ -203,7 +259,7 @@
     font-size: 12pt;
     font-weight: 400;
     line-height: 8px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     color: black;
     transition: background-color 0.5s ease;
     border: 1px solid black;
