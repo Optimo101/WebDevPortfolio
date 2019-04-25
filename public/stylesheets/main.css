@@ -4,6 +4,9 @@
     font-weight: 300;
 }
 
+html {
+}
+
 body {
     z-index: -10;
     background-image: url("../backgrounds/grey_wash_wall.png");
