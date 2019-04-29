@@ -2,17 +2,19 @@
 
 #container-footer-section {
     padding: 0;
-    background: #1B242F;
+    background-image: url("../backgrounds/paper_fibers.png");
+    margin-bottom: 
 }
  
 .container_upArrowIcon {
     text-align: center;
     cursor: pointer;
+    z-index: 2;
+
 }
 
 #upArrowIcon {
-    background: transparent;
-    color: white;
+    color: black;
     display: inline-block;
     padding: 0px;
     width: 50px;
