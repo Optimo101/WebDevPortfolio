@@ -42,11 +42,14 @@
     top: -160;
 }
 
-@media screen and (min-width:961px) {
+
+
+@media screen and (min-width:960px) {
+
     .binder-clips img {
-        width: 260;
+        width: 230;
         position: absolute;
-        left: -30;
+        left: -27;
         transform: rotate(91deg);
     }
     .binder-clips img:nth-of-type(1) {
@@ -58,14 +61,10 @@
     .binder-clips img:nth-of-type(3) {
         bottom: 180;
     }
-    .binder-clips img:nth-of-type(4) {
-        display: none;
-    }
-
-
+ 
     .binder-clips a {
         position: absolute;
-        left: 5;
+        left: 1;
         font-size: 40px;
         color: rgb(75, 75, 75);
         transition: color 0.5s ease;
@@ -75,16 +74,13 @@
         color: #5079b8;
     }
     .binder-clips a:nth-of-type(1){
-        bottom: 562;
+        bottom: 547;
     }
     .binder-clips a:nth-of-type(2){
-        bottom: 436;
+        bottom: 420;
     }
     .binder-clips a:nth-of-type(3){
-        bottom: 290;
-    }
-    .binder-clips a:nth-of-type(4){
-        display: none;
+        bottom: 277;
     }
 
 }
@@ -92,37 +88,34 @@
 @media screen and (max-width:960px) {
     .binder-clips {
         position: absolute;
-        bottom: 0;
+        bottom: -5;
         left: 50%;
         width: 450px;
         margin-left: -225px;
     }
     
     .binder-clips img {
-        width: 180px;
+        width: 200px;
         position: absolute;
-        bottom: -18px;
+        bottom: -18px !important;
         left: 0;
         transform: rotate(1deg);
     }
     .binder-clips img:nth-of-type(1) {
-        left: 100;
+        left: 0;
     }
     .binder-clips img:nth-of-type(2) {
-        left: 185;
+        left: 120;
     }
     .binder-clips img:nth-of-type(3) {
-        left: 280;
-    }
-    .binder-clips img:nth-of-type(4) {
-        display: none;
+        left: 260;
     }
     
     .binder-clips a {
         position: absolute;
         left: 0;
-        bottom: 0;
-        font-size: 30px;
+        bottom: 3;
+        font-size: 35px;
         color: rgb(75, 75, 75);
         transition: color 0.5s ease;
         z-index: 1;
@@ -131,19 +124,18 @@
         color: #5079b8;
     }
     .binder-clips a:nth-of-type(1){
-        left: 174;
-        bottom: 2;
+        left: 82;
+        bottom: 4 !important;
     }
     .binder-clips a:nth-of-type(2){
-        left: 260;
+        left: 205;
+        bottom: 3 !important;
     }
     .binder-clips a:nth-of-type(3){
-        left: 356;
-        bottom: 2;
+        left: 344;
+        bottom: 4 !important;
     }
-    .binder-clips a:nth-of-type(4){
-        display: none;
-    }
+
 }
 
 @media screen and (max-width:719px) {
@@ -151,33 +143,26 @@
         left: 15;
     }
     .binder-clips img:nth-of-type(2) {
-        left: 97;
+        left: 115;
     }
     .binder-clips img:nth-of-type(3) {
-        left: 179;
-    }
-    .binder-clips img:nth-of-type(4) {
-        display: block;
-        left: 261;
+        left: 230;
     }
 
+
     .binder-clips a:nth-of-type(1){
-        left: 90;
+        left: 97;
         bottom: 2;
     }
     .binder-clips a:nth-of-type(2){
-        left: 173;
+        left: 200;
         bottom: 1;
     }
     .binder-clips a:nth-of-type(3){
-        left: 255;
+        left: 313;
         bottom: 1;
     }
-    .binder-clips a:nth-of-type(4){
-        display: block;
-        left: 339;
-        bottom: 2;
-    }
+ 
 }
 
 .contact-section #container-h2 {
@@ -353,25 +338,19 @@
 
 #usb-drive-container {
     position: absolute;
-    left: -30;
-    bottom: 130;
+    left: 5%;
+    bottom: -105;
     width: 240;
     height: 74px;
-    transform: rotate(-20deg);
+    transform: rotate(-5deg);
 }
 
 @media screen and (max-width:960px) {
     #usb-drive-container {
-        left: 50%;
-        margin-left: -320px;
-        bottom: 0;
-        transform: rotate(-45deg);
-    }
-}
-
-@media screen and (max-width:719px) {
-    #usb-drive-container {
-        display: none;
+        left: 5%;
+        margin-left: 0px;
+        bottom: -110;
+        transform: rotate(-5deg);
     }
 }
 
