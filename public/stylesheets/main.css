@@ -5,12 +5,14 @@
 }
 
 html {
+    overflow-x: hidden;
 }
 
 body {
     z-index: -10;
     background-image: url("../backgrounds/grey_wash_wall.png");
     margin: 0;
+    overflow-x: hidden;
 }
 
 h2 {

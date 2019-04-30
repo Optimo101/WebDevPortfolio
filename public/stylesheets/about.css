@@ -156,8 +156,8 @@
 }
 
 .about-section .summary {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 10px auto 0 auto;
   text-align: center;
   font-size: 14pt;
   font-weight: 400;
@@ -179,8 +179,8 @@
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 40px auto 0 auto;
-    max-width: 525px;
+    margin: 60px auto 0 auto;
+    max-width: 550px;
   }
 
   .values-container-grid .value-container {
@@ -192,8 +192,33 @@
 
   .values-container-grid .absolute {
     position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0;
   }
+}
+
+.grid-content-container {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.grid-content-container i {
+  position: absolute;
+  font-size: 120px;
+  left: 50%;
+  top: 50%;
+  margin-top: -60px;
+  transition: visability 0s, opacity 0.5s linear;
+}
+
+.grid-content-container h4 {
+  font-weight: 400;
+  font-size: 18pt;
+  margin: 0;
+
 }
 
 .values-container-grid p {
@@ -217,24 +242,21 @@
   border-top: 8px solid #b1cbb3;
   border-right: 4px solid #b1cbb3;
   border-bottom: 4px solid #b1cbb3;
-
-  /* border-top: 4px solid rgb(145, 193, 212); */
   border-radius: 0 40px 0px 40px;
   z-index: 2;
 }
 
-#grid1-content {
-  text-align: center;
+#grid1-content h4 {
   position: absolute;
-  top: 5%;
-  width: 100%;
-  font-size: 115px;
+  top: 10%;
+  left: 50%;
+  margin-left: -84px;
 }
 
-#grid1-content h4 {
-  margin: 0;
-  font-weight: 400;
-  font-size: 20pt;
+#grid1-content i {
+  margin-left: -75px;
+  margin-top: -60px;
+  color:#68a8ad;
 }
 
 #grid1-content p {
@@ -244,12 +266,6 @@
   margin: 15px 15px 0 15px;
   opacity: 0;
   transition: opacity 0.5s linear;
-}
-
-#grid1-content i {
-  margin: 15px 0 0 0;
-  transition: visability 0s, opacity 0.5s linear;
-  color: rgb(104, 185, 218);
 }
 
 /* ========= (BODY) GRID 2 ========== */
@@ -266,18 +282,17 @@
   z-index: 2;
 }
 
-#grid2-content {
-  text-align: center;
+#grid2-content h4 {
   position: absolute;
-  top: 5%;
-  width: 100%;
-  font-size: 115px;
+  top: 10%;
+  left: 50%;
+  margin-left: -57px;
 }
 
-#grid2-content h4 {
-  margin: 0;
-  font-weight: 400;
-  font-size: 20pt;
+#grid2-content i {
+
+  margin-left: -67.5px;
+  color: #68a8ad;
 }
 
 #grid2-content p {
@@ -287,12 +302,6 @@
   margin: 15px 15px 0 15px;
   opacity: 0;
   transition: opacity 0.5s linear;
-}
-
-#grid2-content i {
-  margin: 15px 0 0 0;
-  transition: visability 0s, opacity 0.5s linear;
-  color: rgb(202, 99, 99);
 }
 
 /* ========= (BODY) GRID 3 ========== */
@@ -309,18 +318,16 @@
   z-index: 2;
 }
 
-#grid3-content {
-  text-align: center;
+#grid3-content h4 {
   position: absolute;
-  bottom: 5%;
-  width: 100%;
-  font-size: 115px;
+  bottom: 10%;
+  left: 50%;
+  margin-left: -92px;
 }
 
-#grid3-content h4 {
-  margin: 0;
-  font-weight: 400;
-  font-size: 20pt;
+#grid3-content i {
+  margin-left: -67.5px;
+  color: #68a8ad;
 }
 
 #grid3-content p {
@@ -332,12 +339,6 @@
   margin: 0;
   opacity: 0;
   transition: opacity 0.5s linear;
-}
-
-#grid3-content i {
-  margin: 0 0 30px 0;
-  transition: visability 0s, opacity 0.5s linear;
-  color: rgb(97, 196, 97);
 }
 
 /* ========= (BODY) GRID 4 ========== */
@@ -354,18 +355,16 @@
   z-index: 2;
 }
 
-#grid4-content {
-  text-align: center;
+#grid4-content h4 {
   position: absolute;
-  bottom: 5%;
-  width: 100%;
-  font-size: 110px;
+  bottom: 10%;
+  left: 50%;
+  margin-left: -92px;
 }
 
-#grid4-content h4 {
-  margin: 0;
-  font-weight: 400;
-  font-size: 20pt;
+#grid4-content i {
+  margin-left: -52.5px;
+  color: #68a8ad;
 }
 
 #grid4-content p {
@@ -377,12 +376,6 @@
   margin: 0;
   opacity: 0;
   transition: opacity 0.5s linear;
-}
-
-#grid4-content i {
-  margin: 0 0 30px 0;
-  transition: visability 0s, opacity 0.5s linear;
-  color: rgb(214, 193, 70);
 }
 
 /* ========= (BODY) CENTER ========== */
@@ -437,6 +430,7 @@
     margin: 40px auto 0 auto;
     flex-direction: column;
     width: 100%;
+    max-width: 400px;
   }
 
   .flex-value-container {
@@ -466,7 +460,7 @@
 
   .values-container-flex h4 {
     display: inline-block;
-    margin-left: 35px;
+    margin-left: 28px;
     font-size: 20pt;
     font-weight: 400;
     opacity: 1;
@@ -476,7 +470,7 @@
   .values-container-flex p {
     display: inline-block;
     font-weight: 400;
-    font-size: 12pt;
+    font-size: 11pt;
     overflow: hidden;
     margin: 0;
     margin-left: 5%;
@@ -627,7 +621,14 @@
 
   .values-container-flex p {
     padding-left: 5px;
-    font-size: 10pt;
+    font-size: 10.5pt;
+  }
+
+  @media screen and (max-width:329px) {
+  .values-container-flex p {
+    padding-left: 5px;
+    font-size: 9.5pt;
+  }
   }
 
   .body .tech-container-body {
