@@ -28,8 +28,6 @@ function createGridItem(area) {
    return gridItem;
 
 }
-
-
 function recalcLandingGrid() {
    landingGridElement.innerHTML = '';
 
@@ -40,7 +38,7 @@ function recalcLandingGrid() {
    Grid.gridGap = 5 //px //hard-coded in landing.css
    Grid.gridCellWidth = (Grid.width - (Grid.gridGap * (Grid.numOfGridColumns - 1))) / Grid.numOfGridColumns; 
    Grid.numOfGridRows = Math.floor((Grid.height + Grid.gridGap) / (Grid.gridCellWidth + Grid.gridGap));
-   Grid.gridAreaSpan = (Grid.gridCellWidth < 25) ? 3 : (Grid.gridCellWidth < 80) ? 2 : 1;
+   Grid.gridAreaSpan = (Grid.gridCellWidth < 25) ? 3 : (Grid.gridCellWidth < 63) ? 2 : 1;
    Grid.numOfGridAreaColumns = Grid.numOfGridColumns / Grid.gridAreaSpan;
    Grid.numOfGridAreaRows = Math.floor(Grid.numOfGridRows / Grid.gridAreaSpan);
    Grid.gridAreaAspectRatio = getGridAreaAspectRatio(Grid.numOfGridAreaRows, Grid.numOfGridAreaColumns, Grid.gridCellWidth, Grid.gridGap, Grid.gridAreaSpan);
@@ -64,7 +62,6 @@ function recalcLandingGrid() {
 
    console.log(Grid);
 }
-
 
 window.onload = recalcLandingGrid;
 window.onresize = recalcLandingGrid;
