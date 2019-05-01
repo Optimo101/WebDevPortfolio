@@ -4,45 +4,7 @@
     clear: left;
     background-image: url("../backgrounds/paper_fibers.png");
     padding-top: 80px;
-    
 }
-
-.contact-section .paperclips img {
-    width: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index:0;
-}
-.contact-section .paperclips img:nth-of-type(1) {
-    left: -125;
-}
-.contact-section .paperclips img:nth-of-type(2) {
-    transform: rotate(-30deg);
-    left: -125;
-}
-.contact-section .paperclips img:nth-of-type(3) {
-    transform: rotate(-45deg);
-    left: -150;
-    top: -110;
-}
-.contact-section .paperclips img:nth-of-type(4) {
-    transform: rotate(-135deg);
-    left: -170;
-    top: 80;
-}
-.contact-section .paperclips img:nth-of-type(5) {
-    transform: rotate(-60deg);
-    left: -100;
-    top: 200;
-}
-.contact-section .paperclips img:nth-of-type(6) {
-    transform: rotate(120deg);
-    left: -115;
-    top: -160;
-}
-
-
 
 @media screen and (min-width:960px) {
 
@@ -53,34 +15,34 @@
         transform: rotate(91deg);
     }
     .binder-clips img:nth-of-type(1) {
-        bottom: 450;
+        bottom: 350;
     }
     .binder-clips img:nth-of-type(2) {
-        bottom: 325;
+        bottom: 225;
     }
     .binder-clips img:nth-of-type(3) {
-        bottom: 180;
+        bottom: 80;
     }
  
     .binder-clips a {
         position: absolute;
         left: 1;
         font-size: 40px;
-        color: rgb(75, 75, 75);
+        color: #5A90BF;
         transition: color 0.5s ease;
         z-index: 1;
     }
     .binder-clips a:hover {
-        color: #5079b8;
+        color: #91CCFF;
     }
     .binder-clips a:nth-of-type(1){
-        bottom: 547;
+        bottom: 447;
     }
     .binder-clips a:nth-of-type(2){
-        bottom: 420;
+        bottom: 320;
     }
     .binder-clips a:nth-of-type(3){
-        bottom: 277;
+        bottom: 177;
     }
 
 }
@@ -116,12 +78,12 @@
         left: 0;
         bottom: 3;
         font-size: 35px;
-        color: rgb(75, 75, 75);
+        color: #5A90BF;
         transition: color 0.5s ease;
         z-index: 1;
     }
     .binder-clips a:hover {
-        color: #5079b8;
+        color: #91CCFF;
     }
     .binder-clips a:nth-of-type(1){
         left: 82;
@@ -178,8 +140,10 @@
 
 .contact-section hr {
     width: 70px;
-    border-top: thin solid black;
+    border: none;
     display: inline-block;
+    height: 2px;
+    background-color: black;
 }
 
 #paragraph-container {
@@ -257,8 +221,8 @@
 #contact-form-container p:nth-of-type(1) {
     color: crimson;
     text-align: left;
-    margin: -19px 0px -14px 0px;
-    padding-left: 25px;
+    margin: -18px 0px -14px 0px;
+    padding-left: 30px;
     line-height: 10pt;
     font-size: 10pt;
 }
@@ -266,18 +230,18 @@
 #contact-form-container p:nth-of-type(2) {
     color: crimson;
     text-align: left;
-    margin: -19px 0px -14px 0px;
-    padding-left: 25px;
+    margin: -18px 0px -14px 0px;
+    padding-left: 30px;
     line-height: 10pt;
     font-size: 10pt;
 }
 
 #contact-form-container p:nth-last-of-type(1) {
     color: crimson;
-    margin: -4px 0px -0px 0px;
-    padding-left: 25px;
+    margin: -2px 0px -0px 0px;
+    padding-left: 30px;
     text-align: left;
-    line-height: 10pt;
+    line-height: 0pt;
     font-size: 10pt;
 }
 
@@ -320,19 +284,19 @@
 
 .contact-section button {
     height: 35px;
-    background-color: transparent;
+    background-color: #5A90BF;
     margin: 0 5% 0 0;
     padding: 10px 30px;
     font-size: 12pt;
     font-weight: 400;
     line-height: 8px;
-    color: black;
+    color: #FFFFFF;
     transition: background-color 0.5s ease;
     border: 1px solid black;
 }
 
 .contact-section button:hover {
-    background-color: #89a58b;
+    background-color: #91CCFF;
 }
 
 

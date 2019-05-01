@@ -1,4 +1,5 @@
   .project-section {
+    position: relative;
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 100%;
@@ -24,14 +25,52 @@
 .project-section .title-container h2 {
   margin-bottom: 10px;
   font-weight: 700;
-  font-size: 28pt;
+  color: black;
 }
 
 .project-section .title-container hr {
   width: 70px;
-  border-top: thin solid black;
+  border: none;
   display: inline-block;
+  height: 2px;
+  background-color: black;
 }
+
+.project-section .paperclips img {
+  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:0;
+}
+.project-section .paperclips img:nth-of-type(1) {
+  left: -125;
+}
+.project-section .paperclips img:nth-of-type(2) {
+  transform: rotate(-30deg);
+  left: -125;
+}
+.project-section .paperclips img:nth-of-type(3) {
+  transform: rotate(-45deg);
+  left: -150;
+  top: -110;
+}
+.project-section .paperclips img:nth-of-type(4) {
+  transform: rotate(-135deg);
+  left: -170;
+  top: 80;
+}
+.project-section .paperclips img:nth-of-type(5) {
+  transform: rotate(-60deg);
+  left: -100;
+  top: 200;
+}
+.project-section .paperclips img:nth-of-type(6) {
+  transform: rotate(120deg);
+  left: -115;
+  top: -160;
+}
+
 
 .project-section .gallery-box {
   display: grid;
@@ -66,19 +105,19 @@
 .project-box {
   transition: opacity .35s ease-in-out;
   cursor: pointer;
-  border-top: 4px solid #b1cbb3;
-  border-right: 4px solid #b1cbb3;
-  border-bottom: 8px solid #b1cbb3;
-  border-left: 8px solid #b1cbb3;
+  border-top: 2px solid #595956;
+  border-right: 2px solid #595956;
+  border-bottom: 2px solid #595956;
+  border-left: 2px solid #595956;
   border-radius: 12px;
-  background-color: #d2e6d4;
+  background-image: url("../backgrounds/paper_fibers.png");
 }
 
 .project-box .thumb-container {
   position: relative;
   min-height: 450px;
   overflow: hidden;
-  border-radius: 6px 6px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .project-box img {
@@ -90,7 +129,7 @@
 
 @media screen and (max-width:1200px) {
   .project-box .thumb-container {
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 10px 0px 0px 10px;
     flex-basis: 60%;
     min-height: 100%;
 
@@ -105,7 +144,7 @@
 
 @media screen and (max-width:719px) {
   .project-box .thumb-container {
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 10px 10px 0px 0px;
     min-height: 400px;
 
   }
@@ -174,20 +213,20 @@
 
 .project-meta-info {
   padding: 0 10px 0px 10px;
-  border-top: 2px solid #b1cbb3;
+  border-top: 1px solid #595956;
 }
 
 @media screen and (max-width:1200px) {
   .project-meta-info {
     flex-basis: 40%;
     border-top: none;
-    border-left: 2px solid #b1cbb3;
+    border-left: 1px solid #595956;
   }
 }
 
 @media screen and (max-width:719px) {
   .project-meta-info {
-    border-top: 2px solid #b1cbb3;
+    border-top: 1px solid #595956;
     border-left: none;
   }
 }
@@ -195,7 +234,9 @@
 .project-meta-info h3 {
   margin: 15px 0 5px 0;
   transition: color .35s ease-in-out;
+  font-size: 18pt;
   font-weight: 400;
+  color: #5A90BF;
 }
 
 .project-meta-info hr {
