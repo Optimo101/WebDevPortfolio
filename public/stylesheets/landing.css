@@ -1,111 +1,32 @@
-/* LANDING */
-/* #section-landing {
-    position: relative;
-    margin-top: 130px;
-    height: calc(100vh - 130px);
-} */
-/* 
-.landing-background-picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: gray;
-} */
-
-/* .landing-background-picture picture {
-    width: 100%;
-    height: 100%;
+/* Temporary. Need to fix */
+.binder-clips {
+    display: none; 
 }
 
-.landing-background-picture picture img {
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-    height: 100%;
-
+#envelope {
+    display: none;
 }
 
-.landing-background-picture-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color:#0093ff;
-    width: 100%;
-    height: 100%;
-    opacity: .65;
-} */
 #landing {
     height: calc(100vh - 130px);
-}
-
-.landing-content {
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
-}
- 
-.landing-content p {
-    font-size: 32pt;
-    line-height: 36pt;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
-    z-index: 1;
-    Font-Family: 'Alegreya', Serif;
-    text-transform: uppercase;
-    font-weight: 700;
 }
 
-.landing-content p span {
-    font-weight: 700;
-} 
-
-.landing-content a {
-    z-index: 1;
+#landing-grid {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
 }
 
-.landing-button {
-    width: 220px;
-    height: 70px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 10;
-    border: 2px solid #fff;
-    color: #fff;
-    font-size: 16pt;
-    background-color: none;
-    transition: background-color .3s;
-}
 
-.landing-button:hover {
-    background-color: #252934;
-}
 
-.landing-content a div i {
-    font-size: 20pt;
-    transform: rotate();
-    transition: all .3s;
-}
-
-.turn-90-deg {
-    transform: rotate(90deg);
-}
-
-@media screen and (max-width: 500px) {
-    .landing-content p {
-        font-size: 20pt;
-        line-height: 22pt;
+@media screen and (max-width:719px) {
+    #landing {
+        height: calc(100vh - 70px);
     }
 }
-
-
