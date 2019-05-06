@@ -58,7 +58,6 @@
         viewSiteIcon3.style.transform = "scale(1)";
     });
 
-
     // When the user clicks on <span> (x), close the modal
     for (i = 0; i < close.length; i++){
         close[i].onclick = function(){
@@ -74,7 +73,6 @@
         modal1.style.display = "none";
         modal2.style.display = "none";
         modal3.style.display = "none";
-
         }
     }
 
@@ -83,42 +81,31 @@
         projectBox2.style.opacity = ".6";
         projectBox3.style.opacity = ".6";
         title1.style.fontWeight = "700";
-        summary1.style.fontWeight = "400";
     });
     projectBox1.addEventListener("mouseout", function(){
         projectBox2.style.opacity = "1";
         projectBox3.style.opacity = "1";
         title1.style.fontWeight = "400";
-        summary1.style.fontWeight = "300";
-
     });
 
     projectBox2.addEventListener("mouseover", function(){
         projectBox1.style.opacity = ".6";
         projectBox3.style.opacity = ".6";
         title2.style.fontWeight = "700";
-        summary2.style.fontWeight = "400";
-
     });
     projectBox2.addEventListener("mouseout", function(){
         projectBox1.style.opacity = "1";
         projectBox3.style.opacity = "1";
         title2.style.fontWeight = "400";
-        summary2.style.fontWeight = "300";
-
     });
 
     projectBox3.addEventListener("mouseover", function(){
         projectBox1.style.opacity = ".6";
         projectBox2.style.opacity = ".6";
         title3.style.fontWeight = "700";
-        summary3.style.fontWeight = "400";
-
     });
     projectBox3.addEventListener("mouseout", function(){
         projectBox1.style.opacity = "1";
         projectBox2.style.opacity = "1";
         title3.style.fontWeight = "400";
-        summary3.style.fontWeight = "300";
-
     });   

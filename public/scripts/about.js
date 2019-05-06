@@ -126,7 +126,7 @@ flex1.addEventListener("mouseover", function(){
     flex1Summary.classList.remove("hidden");
     flex1Summary.classList.remove("height-zero");
     flex1Summary.style.opacity = 1;
-    flex1Icon.style.transform = "scale(1.3)";
+    flex1Icon.style.transform = "scale(1.2)";
 });
 flex1.addEventListener("mouseout", function(){
     flex1Title.classList.remove("hidden");
@@ -145,7 +145,7 @@ flex2.addEventListener("mouseover", function(){
     flex2Summary.classList.remove("hidden");
     flex2Summary.classList.remove("height-zero");
     flex2Summary.style.opacity = 1;
-    flex2Icon.style.transform = "scale(1.3)";
+    flex2Icon.style.transform = "scale(1.2)";
 });
 flex2.addEventListener("mouseout", function(){
     flex2Title.classList.remove("hidden");
@@ -164,7 +164,7 @@ flex3.addEventListener("mouseover", function(){
     flex3Summary.classList.remove("hidden");
     flex3Summary.classList.remove("height-zero");
     flex3Summary.style.opacity = 1;
-    flex3Icon.style.transform = "scale(1.3)";
+    flex3Icon.style.transform = "scale(1.2)";
 });
 flex3.addEventListener("mouseout", function(){
     flex3Title.classList.remove("hidden");
@@ -183,7 +183,7 @@ flex4.addEventListener("mouseover", function(){
     flex4Summary.classList.remove("hidden");
     flex4Summary.classList.remove("height-zero");
     flex4Summary.style.opacity = 1;
-    flex4Icon.style.transform = "scale(1.3)";
+    flex4Icon.style.transform = "scale(1.2)";
 });
 flex4.addEventListener("mouseout", function(){
     flex4Title.classList.remove("hidden");
