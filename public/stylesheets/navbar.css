@@ -6,9 +6,8 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    font-size: 14pt;
-    opacity: 1;
     z-index: 3;
+    border-bottom: 1px solid rgb(89, 89, 86);;
 }
 
 .nav-content {
@@ -16,24 +15,23 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color:  rgba(111, 184, 255, 1);
     height: 100%;
 }
 
 .logo {
     box-sizing: border-box;
-    padding: 10px 22px 11px 20px;
-    border: 1px solid rgba(111, 184, 255, 1);
-    border-radius: 32px;
+    padding: 5px;
+    border: 2px solid rgb(89, 89, 86);;
+    border-radius: 40px;
     color: rgba(111, 184, 255, 1);
     font-weight: 700;
+    font-size: 32pt;
 }
 
 .nav-content ul {
     list-style: none;
     margin: 0;
     padding: 0;
-
 }
 
 .nav-content ul li {
@@ -47,7 +45,11 @@ nav {
 }
 
 .nav-content ul li a {
-    color:  black;
+    color: rgb(89, 89, 86);;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16pt;
+    font-weight: 600;
+    transition: color .25s ease;
 }
 
 .nav-content ul li a:hover {

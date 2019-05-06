@@ -4,15 +4,23 @@
     justify-content: center;
     align-items: center;
     background-image: url("../backgrounds/paper_fibers.png");
+    padding: 60px;
+    padding-bottom: 0;
+}
 
+@media screen and (max-width:719px) {
+    #landing {
+        padding: 30px;
+        padding-bottom: 0;
+    }
 }
 
 #landing-grid {
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    width: calc(100%);
+    height: calc(100%);
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: repear(1fr);
     grid-gap: 5px;
 }
 

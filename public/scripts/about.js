@@ -27,7 +27,7 @@ grid1.addEventListener("mouseover", function(){
     grid1Summary.classList.remove("height-zero");
     grid1Summary.classList.remove("hidden");
     grid1Summary.style.opacity = 1;
-    grid1Summary.style.margin = "15px";
+    // grid1Summary.style.margin = "15px";
 });
 grid1.addEventListener("mouseout", function(){
     grid1Title.style.fontWeight = 400;
@@ -36,7 +36,7 @@ grid1.addEventListener("mouseout", function(){
     grid1Summary.classList.add("hidden");
     grid1Summary.classList.add("height-zero");
     grid1Summary.style.opacity = 0;
-    grid1Summary.style.margin = "15px 15px 0px 15px";
+    // grid1Summary.style.margin = "15px 15px 0px 15px";
 });
 
 
@@ -47,7 +47,7 @@ grid2.addEventListener("mouseover", function(){
     grid2Summary.classList.remove("hidden");
     grid2Summary.classList.remove("height-zero");
     grid2Summary.style.opacity = 1;
-    grid2Summary.style.margin = "15px";
+    // grid2Summary.style.margin = "15px";
 });
 grid2.addEventListener("mouseout", function(){
     grid2Title.style.fontWeight = 400;
@@ -56,7 +56,7 @@ grid2.addEventListener("mouseout", function(){
     grid2Summary.classList.add("height-zero");
     grid2Summary.classList.add("hidden");
     grid2Summary.style.opacity = 0;
-    grid2Summary.style.margin = "15px 15px 0px 15px";
+    // grid2Summary.style.margin = "15px 15px 0px 15px";
 });
 
 
@@ -68,7 +68,7 @@ grid3.addEventListener("mouseover", function(){
     grid3Summary.classList.remove("hidden");
     grid3Summary.classList.remove("height-zero");
     grid3Summary.style.opacity = 1;
-    grid3Summary.style.margin = "15px";
+    // grid3Summary.style.margin = "15px";
 });
 grid3.addEventListener("mouseout", function(){
     grid3Title.style.fontWeight = 400;
@@ -78,7 +78,7 @@ grid3.addEventListener("mouseout", function(){
     grid3Summary.classList.add("height-zero");
     grid3Summary.classList.add("hidden");
     grid3Summary.style.opacity = 0;
-    grid3Summary.style.margin = "0px 15px 5px 15px";
+    // grid3Summary.style.margin = "0px 15px 5px 15px";
 });
 
 
@@ -90,7 +90,7 @@ grid4.addEventListener("mouseover", function(){
     grid4Summary.classList.remove("hidden");
     grid4Summary.classList.remove("height-zero");
     grid4Summary.style.opacity = 1;
-    grid4Summary.style.margin = "15px";
+    // grid4Summary.style.margin = "15px";
 });
 grid4.addEventListener("mouseout", function(){
     grid4Title.style.fontWeight = 400;
@@ -100,7 +100,7 @@ grid4.addEventListener("mouseout", function(){
     grid4Summary.classList.add("height-zero");
     grid4Summary.classList.add("hidden");
     grid4Summary.style.opacity = 0;
-    grid4Summary.style.margin = "15px 15px 5px 15px";
+    // grid4Summary.style.margin = "15px 15px 5px 15px";
 });
 
 let flex1Icon = document.getElementById("flex1-icon");
