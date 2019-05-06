@@ -32,7 +32,7 @@ a:hover, a:visited, a:active, a:link {
 }
 
 .main-wrapper {
-    width: 80vw;
+    width: 80%;
     margin: auto;
     max-width: 1200px;
     z-index: -1;
@@ -40,13 +40,18 @@ a:hover, a:visited, a:active, a:link {
 
 @media screen and (max-width:1023px) {
     .main-wrapper {
-        width: 90vw;
+        width: 90%;
         margin: auto;
     }
 }
 @media screen and (max-width:719px) {
     .main-wrapper {
-        width: 100vw;
+        width: 100%;
+    }
+
+    .paper {
+        margin-top: 70px;
+        margin-bottom: 0px;
         overflow-x: hidden;
     }
 }

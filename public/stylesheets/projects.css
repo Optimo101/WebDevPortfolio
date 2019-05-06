@@ -588,14 +588,14 @@
     position: absolute;
     bottom: -200;
     right: 80;
-    max-width: 260px;
+    max-width: 280px;
     z-index: 1;
   }
   
   #coffee-stain-container img {
-    height: 340px;
+    height: 380px;
     max-width: initial;
-    opacity: .4;
+    opacity: .3;
   }
   
   @media screen and (max-width:719px) {

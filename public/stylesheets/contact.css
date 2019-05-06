@@ -262,27 +262,11 @@
 }
 
 @media screen and (max-width:719px) {
-    .binder-clips img:nth-of-type(1) {
-        left: 15;
+    .binder-clips img {
+        display: none;
     }
-    .binder-clips img:nth-of-type(2) {
-        left: 115;
-    }
-    .binder-clips img:nth-of-type(3) {
-        left: 230;
-    }
-
-    .binder-clips a:nth-of-type(1){
-        left: 97;
-        bottom: 2;
-    }
-    .binder-clips a:nth-of-type(2){
-        left: 200;
-        bottom: 1;
-    }
-    .binder-clips a:nth-of-type(3){
-        left: 313;
-        bottom: 1;
+    .binder-clips a {
+        display: none;
     }
 }
 
