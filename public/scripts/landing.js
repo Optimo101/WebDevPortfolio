@@ -1,5 +1,5 @@
 function headsOrTails() {
-   var random_boolean = Math.random() >= 0.7;
+   var random_boolean = Math.random() >= 0.6;
    return random_boolean;
 }
 
@@ -63,6 +63,23 @@ function getFilteredGridAreaRows(gridAreas, span, rows) {
    return arr;
 }
 
+function getRandomColorFromSet() {
+   // #5A90BF;   Secondary color: rgb(89, 89, 86);  Hover color (links): #91CCFF;  Horizontal bar from 'About Me' section: rgb(155, 180, 202);
+   let num = Math.random();
+   let color = '#5A90BF';
+   if (num <= 0.25) {
+      color = 'rgb(89,89,86)';
+   } else if (num <= 0.50) {
+      color = '#91CCFF';
+   } else if (num <= 0.75) {
+      color = 'rgb(155, 180, 202)';
+   } else {
+      color = color;
+   }
+   return color;
+
+}
+
 function createGridItem(area) {
    var gridItem = document.createElement('div');
    var tracks = area.match(/(\d+)/g);
@@ -70,8 +87,14 @@ function createGridItem(area) {
    gridItem.style.gridColumnStart = tracks[1];
    gridItem.style.gridRowEnd = tracks[2];
    gridItem.style.gridColumnEnd = tracks[3];
-   gridItem.style.backgroundColor = 'pink';
+   gridItem.style.backgroundColor = getRandomColorFromSet();
+   gridItem.style.opacity = 1;
+   gridItem.style.zIndex = 1;
+   // gridItem.style.backgroundImage = 'url(../landing-grid-images/coffee.jpg)';
+   gridItem.style.backgroundSize = 'cover';
+   gridItem.style.backgroundPosition = 'center';
    return gridItem;
+   
 }
 
 //Get the grid container
@@ -87,6 +110,9 @@ function recalcLandingGrid() {
    Grid.gridGap = 5; //px //hard-coded in landing.css
    Grid.gridCellWidth = (Grid.width - (Grid.gridGap * (Grid.numOfGridColumns - 1))) / Grid.numOfGridColumns;
    Grid.numOfGridRows = Math.floor((Grid.height + Grid.gridGap) / (Grid.gridCellWidth + Grid.gridGap));
+   
+   landingGridElement.style.gridTemplateRows = `repeat(${Grid.numOfGridRows}, ${Grid.gridCellWidth}px)`;
+
    Grid.gridAreaSpan = (Grid.gridCellWidth < 26) ? 3 : (Grid.gridCellWidth < 55) ? 2 : 1;
    Grid.numOfGridAreaColumns = Grid.numOfGridColumns / Grid.gridAreaSpan;
    Grid.numOfGridAreaRows = Math.floor(Grid.numOfGridRows / Grid.gridAreaSpan);
@@ -117,7 +143,7 @@ function recalcLandingGrid() {
       }
    });
 
-   landingGridElement.style.gridTemplateRows = `repeat(${Grid.numOfGridRows}, ${Grid.gridCellWidth}px)`;
+   
 
    //Start makin' DIVS
    Grid.gridItems = [];
