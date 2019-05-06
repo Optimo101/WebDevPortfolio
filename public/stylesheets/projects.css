@@ -419,7 +419,8 @@
     height: 100%;
     overflow: auto; 
     background-color: white; 
-    background-color: rgba(0, 0, 0, 0.473); 
+    background-color: rgba(0, 0, 0, 0.473);
+    z-index: 3;
   }
   
   /* Modal Box (content) */
