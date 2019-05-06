@@ -1,12 +1,3 @@
-/* Temporary. Need to fix */
-.binder-clips {
-    display: none; 
-}
-
-#envelope {
-    display: none;
-}
-
 #landing {
     height: calc(100vh - 130px);
     display: flex;
