@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../backgrounds/paper_fibers.png");
+
 }
 
 #landing-grid {

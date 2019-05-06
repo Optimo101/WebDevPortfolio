@@ -80,7 +80,7 @@ function getRandomColorFromSet() {
 
 }
 
-function createGridItem(area) {
+function createGridItem(area) {  
    var gridItem = document.createElement('div');
    var tracks = area.match(/(\d+)/g);
    gridItem.style.gridRowStart = tracks[0];
@@ -91,10 +91,9 @@ function createGridItem(area) {
    gridItem.style.opacity = 1;
    gridItem.style.zIndex = 1;
    // gridItem.style.backgroundImage = 'url(../landing-grid-images/coffee.jpg)';
-   gridItem.style.backgroundSize = 'cover';
-   gridItem.style.backgroundPosition = 'center';
+   // gridItem.style.backgroundSize = 'cover';
+   // gridItem.style.backgroundPosition = 'center';
    return gridItem;
-   
 }
 
 //Get the grid container
@@ -113,7 +112,7 @@ function recalcLandingGrid() {
    
    landingGridElement.style.gridTemplateRows = `repeat(${Grid.numOfGridRows}, ${Grid.gridCellWidth}px)`;
 
-   Grid.gridAreaSpan = (Grid.gridCellWidth < 26) ? 3 : (Grid.gridCellWidth < 55) ? 2 : 1;
+   Grid.gridAreaSpan = (Grid.gridCellWidth < 26) ? 3 : (Grid.gridCellWidth < 55) ? 2 : 2;
    Grid.numOfGridAreaColumns = Grid.numOfGridColumns / Grid.gridAreaSpan;
    Grid.numOfGridAreaRows = Math.floor(Grid.numOfGridRows / Grid.gridAreaSpan);
    Grid.gridAreaAspectRatio = getGridAreaAspectRatio(Grid.numOfGridAreaRows, Grid.numOfGridAreaColumns, Grid.gridCellWidth, Grid.gridGap);
