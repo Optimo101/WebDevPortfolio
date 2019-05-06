@@ -3,12 +3,14 @@
     display: grid;
     grid-template-rows: 130px auto;
     grid-template-columns: 300px 1fr;
+    padding-top: 70px;
+    background-image: url("../backgrounds/paper_fibers.png");
   }
 }
 @media screen and (max-width:860px) {
   .about-section {
     display: grid;
-    grid-template-rows: 120px auto;
+    grid-template-rows: 90px auto;
     grid-template-columns: 170px 1fr;
   }
 }
@@ -113,7 +115,6 @@
 
 .card-title div:nth-of-type(1) {
   position: relative;
-  font-family: 'Ruda', sans-serif;
   font-size: 22pt;
   color: #5A90BF;
   font-weight: 700;
@@ -143,7 +144,7 @@
 }
 
 .card-contact-info div {
-  font-family: 'Ruda', sans-serif;
+  font-size: 9pt;
 }
 
 .card-contact-info i{
@@ -162,8 +163,6 @@
   padding-bottom: 10px;
   padding-top: 10px;
   border: 2px solid #595956;
-  /* border-left: 2px solid #595956;
-  border-bottom: 2px solid #595956; */
   border-radius: 20px 20px 20px 20px;
   font-size: 20pt;
   text-align: center;
@@ -279,12 +278,12 @@
 }
 
 .values-container-grid p {
-  font-size: 16px;
+  font-size: 14pt;
 }
 
 @media screen and (max-width:1100px) {
   .values-container-grid p {
-    font-size: 14px;
+    font-size: 12pt;
   }
 }
 
@@ -307,7 +306,7 @@
   position: absolute;
   top: 10%;
   left: 50%;
-  margin-left: -84px;
+  margin-left: -72px;
 }
 
 #grid1-content i {
@@ -344,7 +343,7 @@
   position: absolute;
   top: 10%;
   left: 50%;
-  margin-left: -57px;
+  margin-left: -48px;
 }
 
 #grid2-content i {
@@ -381,7 +380,7 @@
   position: absolute;
   bottom: 10%;
   left: 50%;
-  margin-left: -92px;
+  margin-left: -81px;
 }
 
 #grid3-content i {
@@ -417,7 +416,7 @@
   position: absolute;
   bottom: 10%;
   left: 50%;
-  margin-left: -92px;
+  margin-left: -80px;
 }
 
 #grid4-content i {
@@ -454,11 +453,11 @@
   margin: 0;
   top: 50%;
   left: 50%;
-  font-size: 24pt;
+  font-size: 28pt;
   width: 170px;
   height: 80px;
   margin-left: -85px;
-  margin-top: -45px;
+  margin-top: -50px;
   font-weight: 700;
   color: whitesmoke;
 }
@@ -485,7 +484,7 @@
 
   .about-section .values-container-flex {
     display: flex;
-    margin: 40px auto 0 auto;
+    margin: 20px auto 0 auto;
     flex-direction: column;
     width: 100%;
     max-width: 400px;
@@ -495,7 +494,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-height: 110px;
+    min-height: 100px;
   }
 
   #flex-title h3 {
@@ -665,14 +664,7 @@
 
   .values-container-flex p {
     padding-left: 5px;
-    font-size: 10.5pt;
-  }
-
-  @media screen and (max-width:329px) {
-  .values-container-flex p {
-    padding-left: 5px;
-    font-size: 9.5pt;
-  }
+    font-size: 11.5pt;
   }
 
   .body .tech-container-body {

@@ -1,11 +1,12 @@
 /* GENERAL */
 * {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 300;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
 }
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -22,7 +23,7 @@ h2 {
 .paper {
     margin-top: 130px;
     margin-bottom: 130px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 0px 5px 1px rgba(0,0,0,0.75);
     background-color: #fff;
 }
 
@@ -46,6 +47,7 @@ a:hover, a:visited, a:active, a:link {
 @media screen and (max-width:719px) {
     .main-wrapper {
         width: 100vw;
+        overflow-x: hidden;
     }
 }
 

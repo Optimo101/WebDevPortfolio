@@ -4,7 +4,8 @@
     grid-template-rows: auto auto;
     grid-template-columns: 100%;
     padding: 40px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     background-image: url("../backgrounds/paper_fibers.png");
     position: relative;
   }
@@ -23,9 +24,10 @@
 }
 
 .project-section .title-container h2 {
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: black;
+  font-size: 28pt;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 3px;
 }
 
 .project-section .title-container hr {
@@ -35,42 +37,6 @@
   height: 2px;
   background-color: black;
 }
-
-.project-section .paperclips img {
-  width: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index:0;
-}
-.project-section .paperclips img:nth-of-type(1) {
-  left: -125;
-}
-.project-section .paperclips img:nth-of-type(2) {
-  transform: rotate(-30deg);
-  left: -125;
-}
-.project-section .paperclips img:nth-of-type(3) {
-  transform: rotate(-45deg);
-  left: -150;
-  top: -110;
-}
-.project-section .paperclips img:nth-of-type(4) {
-  transform: rotate(-135deg);
-  left: -170;
-  top: 80;
-}
-.project-section .paperclips img:nth-of-type(5) {
-  transform: rotate(-60deg);
-  left: -100;
-  top: 200;
-}
-.project-section .paperclips img:nth-of-type(6) {
-  transform: rotate(120deg);
-  left: -115;
-  top: -160;
-}
-
 
 .project-section .gallery-box {
   display: grid;
@@ -235,7 +201,6 @@
 .project-meta-info h3 {
   margin: 10px 0 5px 0;
   transition: color .35s ease-in-out;
-  font-family: 'Ruda', sans-serif;
   font-size: 20pt;
   font-weight: 400;
   color: #5A90BF;
@@ -248,13 +213,11 @@
 }
 
 .project-meta-info p:nth-of-type(1) {
-  font-weight: 400;
   margin-top: 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .project-meta-info p:nth-of-type(2) {
-  font-weight: 300;
   font-size: 12pt;
 }
 
@@ -440,48 +403,6 @@
     }
 } */
 
-#pen-container {
-  position: absolute;
-  bottom: 150;
-  right: -245;
-}
-
-#pen-container img {
-  height: 400px;
-  transform: rotate(35deg);
-}
-
-
-#coffee-stain-container {
-  position: absolute;
-  bottom: -200;
-  right: 60;
-  max-width: 260px;
-  z-index: 1;
-}
-
-#coffee-stain-container img {
-  height: 340px;
-  max-width: initial;
-  opacity: .4;
-}
-
-@media screen and (max-width:719px) {
-  #coffee-stain-container {
-    position: absolute;
-    bottom: -100;
-    right: -60;
-    max-width: 260px;
-    z-index: 1;
-  }
-  
-  #coffee-stain-container img {
-    height: 340px;
-    max-width: initial;
-    opacity: .4;
-  }
-}
-
 
 /* The Modal (background) */
 .project-section .modal {
@@ -557,7 +478,7 @@
   .modal-meta-info a {
     display: inline-block;
     height: 20px;
-    width: 120px;
+    width: 100px;
     padding: 10px 10px 12px 10px;
     text-align: center;
     background-color: #5A90BF;
@@ -599,4 +520,96 @@
     opacity: 1;
     text-decoration: none;
     cursor: pointer;
+  }
+
+
+  /* ============== ADDED IMAGES =============== */
+
+  .project-section .paperclips img {
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:0;
+  }
+  
+  @media screen and (max-width:1023px) {
+    .project-section .paperclips img {
+      display: none;
+    }
+  }
+  
+  .project-section .paperclips img:nth-of-type(1) {
+    left: -125;
+  }
+  .project-section .paperclips img:nth-of-type(2) {
+    transform: rotate(-30deg);
+    left: -125;
+  }
+  .project-section .paperclips img:nth-of-type(3) {
+    transform: rotate(-45deg);
+    left: -150;
+    top: -110;
+  }
+  .project-section .paperclips img:nth-of-type(4) {
+    transform: rotate(-135deg);
+    left: -170;
+    top: 80;
+  }
+  .project-section .paperclips img:nth-of-type(5) {
+    transform: rotate(-60deg);
+    left: -100;
+    top: 200;
+  }
+  .project-section .paperclips img:nth-of-type(6) {
+    transform: rotate(120deg);
+    left: -115;
+    top: -160;
+  }
+
+  #pen-container {
+    position: absolute;
+    bottom: 150;
+    right: -245;
+  }
+  
+  @media screen and (max-width:1500px) {
+    #pen-container {
+      display: none;
+    }
+  }
+  
+  #pen-container img {
+    height: 400px;
+    transform: rotate(35deg);
+  }
+  
+  #coffee-stain-container {
+    position: absolute;
+    bottom: -200;
+    right: 80;
+    max-width: 260px;
+    z-index: 1;
+  }
+  
+  #coffee-stain-container img {
+    height: 340px;
+    max-width: initial;
+    opacity: .4;
+  }
+  
+  @media screen and (max-width:719px) {
+    #coffee-stain-container {
+      position: absolute;
+      bottom: -100;
+      right: -60;
+      max-width: 260px;
+      z-index: 1;
+    }
+    
+    #coffee-stain-container img {
+      height: 340px;
+      max-width: initial;
+      opacity: .4;
+    }
   }
