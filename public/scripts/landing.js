@@ -112,7 +112,7 @@ function recalcLandingGrid() {
    
    landingGridElement.style.gridTemplateRows = `repeat(${Grid.numOfGridRows}, ${Grid.gridCellWidth}px)`;
 
-   Grid.gridAreaSpan = (Grid.gridCellWidth < 26) ? 3 : (Grid.gridCellWidth < 55) ? 2 : 2;
+   Grid.gridAreaSpan = (Grid.gridCellWidth < 25) ? 3 : (Grid.gridCellWidth < 45) ? 2 : 1;
    Grid.numOfGridAreaColumns = Grid.numOfGridColumns / Grid.gridAreaSpan;
    Grid.numOfGridAreaRows = Math.floor(Grid.numOfGridRows / Grid.gridAreaSpan);
    Grid.gridAreaAspectRatio = getGridAreaAspectRatio(Grid.numOfGridAreaRows, Grid.numOfGridAreaColumns, Grid.gridCellWidth, Grid.gridGap);
