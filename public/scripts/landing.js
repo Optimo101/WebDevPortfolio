@@ -1,5 +1,5 @@
 function headsOrTails() {
-   var random_boolean = Math.random() >= 0.6;
+   var random_boolean = Math.random() >= 0.5;
    return random_boolean;
 }
 
@@ -90,7 +90,7 @@ function createGridItem(area) {
    gridItem.style.backgroundColor = getRandomColorFromSet();
    gridItem.style.opacity = 1;
    gridItem.style.zIndex = 1;
-   // gridItem.style.backgroundImage = 'url(../landing-grid-images/coffee.jpg)';
+   // gridItem.style.backgroundImage = 'url(../landing-grid-images/dice.jpg)';
    // gridItem.style.backgroundSize = 'cover';
    // gridItem.style.backgroundPosition = 'center';
    return gridItem;

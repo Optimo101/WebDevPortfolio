@@ -9,6 +9,8 @@ nav {
     font-size: 14pt;
     opacity: 1;
     z-index: 3;
+    box-sizing: border-box;
+    border-bottom: 1px solid #5a90bf;
 }
 
 .nav-content {
@@ -75,6 +77,10 @@ nav {
 
     .nav-content {
         width: 80%;
+    }
+
+    nav {
+        background-image: url(../backgrounds/paper_fibers.png);
     }
 }
 

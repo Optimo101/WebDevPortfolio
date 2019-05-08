@@ -5,6 +5,7 @@
   top: 70px;
   left: 0;
   z-index: 2;
+  
  
 }
 
@@ -26,6 +27,7 @@ margin-top: 0px;
   background-color: #fff;
   opacity: 1;
   font-size:18pt;
+  background-image: url(../backgrounds/paper_fibers.png);
 } 
 
 #nav-mobile-menu-list li div:hover {
