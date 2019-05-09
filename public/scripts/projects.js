@@ -25,15 +25,45 @@
     let viewSiteIcon2 = document.getElementById("view-site-icon2");
     let viewSiteIcon3 = document.getElementById("view-site-icon3");
         
-    // When the user clicks the projectBox, open the modal 
+    // When the user clicks the projectBox, open the modal and begin slideshow
     projectBox1.onclick = function() {
         modal1.style.display = "block";
+
+        $("#slideshow1 > div:gt(0)").hide();
+        setInterval(function() { 
+        $('#slideshow1 > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow1');
+        },  3000);
     }
     projectBox2.onclick = function() {
         modal2.style.display = "block";
+
+        $("#slideshow2 > div:gt(0)").hide();
+        setInterval(function() { 
+        $('#slideshow2 > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow2');
+        },  3000);
     }
     projectBox3.onclick = function() {
         modal3.style.display = "block";
+
+        $("#slideshow3 > div:gt(0)").hide();
+        setInterval(function() { 
+        $('#slideshow3 > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow3');
+        },  3000);
     }
 
     // when the user hovers over 'View Site' button scale icon larger
@@ -108,4 +138,4 @@
         projectBox1.style.opacity = "1";
         projectBox2.style.opacity = "1";
         title3.style.fontWeight = "400";
-    });   
+    });

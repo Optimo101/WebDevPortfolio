@@ -42,3 +42,10 @@
 
     }
 }
+
+#home-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -200px;
+}

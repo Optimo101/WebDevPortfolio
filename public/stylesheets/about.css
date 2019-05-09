@@ -5,7 +5,6 @@
     grid-template-columns: minmax(300px, 30%) 1fr;
     padding-top: 70px;
     padding-bottom: 40px;
-    background-image: url("../backgrounds/paper_fibers.png");
   }
 }
 @media screen and (max-width:860px) {
@@ -13,6 +12,8 @@
     display: grid;
     grid-template-rows: 90px auto;
     grid-template-columns: 170px 1fr;
+    padding-top: 70px;
+
   }
 }
 @media screen and (max-width:719px) {
@@ -20,6 +21,7 @@
     display: grid;
     grid-template-rows: 120px auto;
     grid-template-columns: 100%;
+    padding-top: 70px;
   }
 }
 
@@ -28,7 +30,6 @@
 .about-section .header1 {
   position: relative;
   background-color: #9BB4CA;
-  z-index: 1;
 }
 
 @media screen and (min-width:860px) {
@@ -42,6 +43,8 @@
     border-radius: 50%;
     display: block;
     border: 8px solid whitesmoke;
+    z-index: 1;
+
   }
 }
 @media screen and (max-width:860px) {
@@ -54,6 +57,8 @@
     border-radius: 50%;
     display: block;
     border: 6px solid whitesmoke;
+    z-index: 1;
+
   }
 }
 
@@ -121,6 +126,7 @@
   font-size: 22pt;
   color: #5A90BF;
   font-weight: 700;
+  font-family: 'Raleway', sans-serif;
 }
 .card-title div:nth-of-type(2) {
   position: relative;
@@ -176,8 +182,8 @@
 
 .tech-list-side {
   background-image: url("../backgrounds/paper_fibers.png");
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   border: 2px solid #595956;
   border-radius: 20px 20px 20px 20px;
   font-size: 20pt;
@@ -186,6 +192,7 @@
 
 .tech-list-side h3 {
   margin: 0 0 10px 0;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18pt;
   color: #595956;
@@ -268,6 +275,8 @@
     bottom: 0; 
     left: 0; 
     right: 0;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+
   }
 }
 
@@ -316,7 +325,6 @@
   border-top: 1px none #595956;
   border-right: 1px solid #595956;
   border-bottom: 1px solid #595956;
-  /* border-radius: 0 40px 0px 40px; */
   z-index: 2;
 }
 
@@ -510,6 +518,7 @@
 
   #flex-title h3 {
     margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
     font-size: 24pt;
     font-weight: 700;
     margin-bottom: 10px;

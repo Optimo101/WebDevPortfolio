@@ -24,7 +24,7 @@ h2 {
     margin-top: 130px;
     margin-bottom: 130px;
     box-shadow: 0 0px 5px 1px rgba(0,0,0,0.75);
-    background-color: #fff;
+    background-image: url("../backgrounds/paper_fibers.png");
 }
 
 a:hover, a:visited, a:active, a:link {

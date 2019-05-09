@@ -2,30 +2,37 @@
 .contact-section {
     position: relative;
     clear: left;
-    background-image: url("../backgrounds/paper_fibers.png");
-    padding-top: 80px;
+    padding-top: 75px;
 }
 
 .contact-section #container-h2 {
     position: relative;
-    padding: 0px 0px 35px 0px;
+    margin: 50px 20px 35px 20px;
     text-align: center;
 }
 
 .contact-section h2 {
+    display: inline-block;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
     font-size: 28pt;
     letter-spacing: 3px;
     animation:  5s ease both;
+    margin: 0 15px 0 15px;
 }
 
 .contact-section hr {
-    width: 70px;
+    width: 20%;
     border: none;
     display: inline-block;
     height: 2px;
     background-color: black;
+}
+
+@media screen and (max-width:385px) {
+    .contact-section hr {
+        width: 14%;
+    }
 }
 
 #paragraph-container {
@@ -308,7 +315,7 @@
 
 #envelope {
     position: absolute;
-    top: -50px;
+    top: 200px;
     right: -285px;
     z-index: -1;
     transform: rotate(50deg);
@@ -325,7 +332,7 @@
 #usb-drive-container {
     position: absolute;
     left: 5%;
-    bottom: -105;
+    bottom: -10;
     width: 240;
     height: 74px;
     transform: rotate(-5deg);
@@ -335,8 +342,14 @@
     #usb-drive-container {
         left: 5%;
         margin-left: 0px;
-        bottom: -110;
+        bottom: -105;
         transform: rotate(-5deg);
+    }
+}
+
+@media screen and (max-width:719px) {
+    #usb-drive-container {
+        display: none;
     }
 }
 
