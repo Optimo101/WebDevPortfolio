@@ -257,7 +257,7 @@
   .about-section .values-container-grid {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 25% 25% 25% 25%;
     margin: 40px auto 0 auto;
     max-width: 575px;
   }
@@ -265,19 +265,9 @@
   .values-container-grid .value-container {
     position: relative;
     width: 100%;
-    height: 0;
     padding-top: 100%;
   }
 
-  .values-container-grid .absolute {
-    position: absolute;
-    top: 0; 
-    bottom: 0; 
-    left: 0; 
-    right: 0;
-    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-
-  }
 }
 
 .grid-content-container {
@@ -316,15 +306,13 @@
 
 /* ========= (BODY) GRID 1 ========== */
 #grid1 {
-  box-sizing: border-box;
+  position: relative;
   grid-area: 1 / 1 / 3 / 3;
   margin-left: auto;
   background-image: url("../backgrounds/paper_fibers.png");
   clip-path: polygon(0 0, 100% 0, 100% 60%, 60% 100%, 0 100%);
-  border-left: 1px none #595956;
-  border-top: 1px none #595956;
-  border-right: 1px solid #595956;
-  border-bottom: 1px solid #595956;
+  border-right: 2px solid #595956;
+  border-bottom: 2px solid #595956;
   z-index: 2;
 }
 
@@ -352,14 +340,11 @@
 
 /* ========= (BODY) GRID 2 ========== */
 #grid2 {
-  box-sizing: border-box;
   grid-area: 1 / 3 / 3 / 5;
   background-image: url("../backgrounds/paper_fibers.png");
   clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%, 0 60%);
-  border-left: 1px solid #595956;
-  border-top: 1px none #595956;
-  border-right: 1px none #595956;
-  border-bottom: 1px solid #595956;
+  border-left: 2px solid #595956;
+  border-bottom: 2px solid #595956;
   z-index: 2;
 }
 
@@ -387,14 +372,11 @@
 
 /* ========= (BODY) GRID 3 ========== */
 #grid3 {
-  box-sizing: border-box;
   grid-area: 3 / 1 / 5 / 3;
   background-image: url("../backgrounds/paper_fibers.png");
   clip-path: polygon(60% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
-  border-left: 1px none #595956;
-  border-top: 1px solid #595956;
-  border-right: 1px solid #595956;
-  border-bottom: 1px none #595956;
+  border-top: 2px solid #595956;
+  border-right: 2px solid #595956;
   z-index: 2;
 }
 
@@ -421,14 +403,11 @@
 
 /* ========= (BODY) GRID 4 ========== */
 #grid4 {
-  box-sizing: border-box;
   grid-area: 3 / 3 / 5 / 5;
   background-image: url("../backgrounds/paper_fibers.png");
   clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
-  border-left: 1px solid #595956;
-  border-top: 1px solid #595956;
-  border-right: 1px none #595956;
-  border-bottom: 1px none #595956;
+  border-left: 2px solid #595956;
+  border-top: 2px solid #595956;
   z-index: 2;
 }
 
@@ -455,9 +434,7 @@
 
 /* ========= (BODY) CENTER ========== */
 #grid-center {
-  box-sizing: border-box;
   position: relative;
-  box-sizing: border-box;
   grid-area: 2 / 2 / 4 / 4;
   width: 100%;
   height: 100%;

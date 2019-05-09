@@ -257,6 +257,13 @@
     }
   }
 
+  @media screen and (max-width:330px) {
+    .project-section .modal-content {
+      margin: -18% auto 0 auto;
+    }
+  }
+
+
   .slideshow { 
     position: relative;
   }
@@ -416,7 +423,7 @@
   
   #coffee-stain-container {
     position: absolute;
-    bottom: -200;
+    bottom: -250;
     right: 80;
     max-width: 280px;
     z-index: 2;
@@ -432,14 +439,14 @@
   @media screen and (max-width:719px) {
     #coffee-stain-container {
       position: absolute;
-      bottom: -100;
+      bottom: -170;
       right: -60;
-      max-width: 260px;
+      max-width: 280px;
       z-index: 1;
     }
     
     #coffee-stain-container img {
-      height: 340px;
+      height: 380px;
       max-width: initial;
       opacity: .4;
     }
