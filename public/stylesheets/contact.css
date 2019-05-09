@@ -46,7 +46,13 @@
 #contact-form-container {
     max-width: 450px;
     margin: 0 auto;
-    padding: 0 0 210px 0;
+    padding: 0 0 240px 0;
+}
+
+@media screen and (max-width:719px) {
+    #contact-form-container {
+        padding: 0 0 100px 0;
+    }
 }
 
 #successP {
@@ -155,7 +161,7 @@
     background-color: #5A90BF;
     margin: 0 5% 0 0;
     padding: 10px 30px;
-    font-size: 11pt;
+    font-size: 12pt;
     font-weight: 400;
     line-height: 8px;
     color: #FFFFFF;
@@ -261,12 +267,41 @@
     }
 }
 
+.footer-icons {
+    display: none;
+}
+
 @media screen and (max-width:719px) {
     .binder-clips img {
         display: none;
     }
     .binder-clips a {
         display: none;
+    }
+
+    .footer-icons {
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+
+    .footer-icons a {
+        background: #5A90BF;
+        margin: 0px 5px;
+        padding: 15px 10px;
+        display: inline-block;
+        font-size: 30px;
+        color: whitesmoke;
+        width: 40px;
+        text-align: center;
+        transition: background-color 0.5s ease;
+        border: 1px solid black;
+        border-radius: 8px;
+    }
+
+    .footer-icons a:hover {
+        background-color: #91CCFF;
     }
 }
 
