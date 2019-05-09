@@ -64,7 +64,6 @@ function getFilteredGridAreaRows(gridAreas, span, rows) {
 }
 
 function getRandomColorFromSet() {
-   // #5A90BF;   Secondary color: rgb(89, 89, 86);  Hover color (links): #91CCFF;  Horizontal bar from 'About Me' section: rgb(155, 180, 202);
    let num = Math.random();
    let color = '#5A90BF';
    if (num <= 0.25) {
@@ -90,10 +89,34 @@ function createGridItem(area) {
    gridItem.style.backgroundColor = getRandomColorFromSet();
    gridItem.style.opacity = 1;
    gridItem.style.zIndex = 1;
-   // gridItem.style.backgroundImage = 'url(../landing-grid-images/dice.jpg)';
-   // gridItem.style.backgroundSize = 'cover';
-   // gridItem.style.backgroundPosition = 'center';
+
    return gridItem;
+}
+
+function getRandomGridItems(listSize) {
+   var indexes= [];
+   while(indexes.length < 4) {
+      var index = Math.floor(Math.random()*listSize);
+      if(!(indexes.includes(index))) {
+         indexes.push(index);
+      }
+   }
+   return indexes;
+}
+
+function addGridItemImages(gridItemsArr, gridItemImagesArr) {
+   var listSize = gridItemsArr.length;
+
+   if (listSize < 1999) {
+      var randomGridItems = getRandomGridItems(listSize);
+      for(var i = 0; i < randomGridItems.length; i++) {
+         gridItemsArr[randomGridItems[i]].style.backgroundImage = `url(../landing-grid-images/${i}.jpg)`;
+         gridItemsArr[randomGridItems[i]].style.backgroundSize = 'cover';
+         gridItemsArr[randomGridItems[i]].style.backgroundPosition = 'center';
+      }
+
+   }
+
 }
 
 //Get the grid container
@@ -112,7 +135,7 @@ function recalcLandingGrid() {
    
    landingGridElement.style.gridTemplateRows = `repeat(${Grid.numOfGridRows}, ${Grid.gridCellWidth}px)`;
 
-   Grid.gridAreaSpan = (Grid.gridCellWidth < 26) ? 3 : (Grid.gridCellWidth < 55) ? 2 : 2;
+   Grid.gridAreaSpan = (Grid.gridCellWidth < 25) ? 3 : (Grid.gridCellWidth < 45) ? 2 : 1;
    Grid.numOfGridAreaColumns = Grid.numOfGridColumns / Grid.gridAreaSpan;
    Grid.numOfGridAreaRows = Math.floor(Grid.numOfGridRows / Grid.gridAreaSpan);
    Grid.gridAreaAspectRatio = getGridAreaAspectRatio(Grid.numOfGridAreaRows, Grid.numOfGridAreaColumns, Grid.gridCellWidth, Grid.gridGap);
@@ -130,6 +153,12 @@ function recalcLandingGrid() {
       }
    });
 
+   //determine if the upper left grid area is in the final set, delete it if so.
+   var firstGridAreaRegEx =/^1, 1, \d+, \d+$/;
+   if(firstGridAreaRegEx.test(Grid.finalGridAreas[0])) {
+      Grid.finalGridAreas.shift();
+   }
+
    Grid.filteredGridAreaColumns.forEach(function(gridArea){
       if(!(Grid.finalGridAreas.includes(gridArea))) {
          Grid.finalGridAreas.push(gridArea);
@@ -143,17 +172,24 @@ function recalcLandingGrid() {
    });
 
    
+   //create document fragment to hold all the grid items.
+   var fragment = document.createDocumentFragment();
 
    //Start makin' DIVS
    Grid.gridItems = [];
    
-   //create document fragment to hold all the grid items.
-   var fragment = document.createDocumentFragment();
-
    Grid.finalGridAreas.forEach(function(gridArea) {
       var gridItem = createGridItem(gridArea);
       Grid.gridItems.push(gridItem);
    });
+
+   //make some of the grid item's images, based on the total amount of grid items:
+   var gridItemImages = [ 
+                  '../landing-grid-images/1.png',
+                  '../landing-grid-images/2.png',
+                  '../landing-grid-images/3.png'];
+   
+   addGridItemImages(Grid.gridItems, gridItemImages);
 
    //append all the created grid item DIVs to the fragment.
    Grid.gridItems.forEach(function(gridItem) {
