@@ -30,14 +30,6 @@ function getFilteredGridAreaColumns(gridAreas, span, columns) {
          arr.push(gridAreas[ga]);
       }
    }
-
-   // if (columns >= 6) {
-   //    for (var ga = 0; ga < gridAreas.length; ga++) {
-   //       if( (gridAreas[ga].match(regex)[1] === (Number(column2Start) + span).toString())) {
-   //          arr.push(gridAreas[ga]);
-   //       }
-   //    }
-   // }
    return arr;
 }
 
@@ -52,14 +44,6 @@ function getFilteredGridAreaRows(gridAreas, span, rows) {
          arr.push(gridAreas[ga]);
       }
    }
-
-   // if (rows > 3) {
-   //    for (var ga = 0; ga < gridAreas.length; ga++) {
-   //       if( (gridAreas[ga].match(regex)[1] === (Number(row2Start) + span).toString())) {
-   //          arr.push(gridAreas[ga]);
-   //       }
-   //    }
-   // }
    return arr;
 }
 
@@ -88,36 +72,62 @@ function createGridItem(area) {
    gridItem.style.gridColumnEnd = tracks[3];
    gridItem.style.backgroundColor = getRandomColorFromSet();
    gridItem.style.opacity = 1;
-   gridItem.style.zIndex = 1;
+   gridItem.style.zIndex = 2;
 
    return gridItem;
 }
 
-function getRandomGridItems(listSize) {
+function getRandomGridItems(gridAreas) {
    var indexes= [];
-   while(indexes.length < 4) {
-      var index = Math.floor(Math.random()*listSize);
-      if(!(indexes.includes(index))) {
-         indexes.push(index);
+
+   if(gridAreas.length < 25) {
+      while(indexes.length < 4) {
+         var index = Math.floor(Math.random()*gridAreas.length);
+         if(!(indexes.includes(index))) {
+            indexes.push(index);
+         }
+      }
+   } else if(gridAreas.length < 45) {
+      while(indexes.length < 6) {
+         var index = Math.floor(Math.random()*gridAreas.length);
+         if(!(indexes.includes(index))) {
+            indexes.push(index);
+         }
+      }
+   } else {
+      while(indexes.length < 10) {
+         var index = Math.floor(Math.random()*gridAreas.length);
+         if(!(indexes.includes(index))) {
+            indexes.push(index);
+         }
       }
    }
-   return indexes;
-}
 
-function addGridItemImages(gridItemsArr, gridItemImagesArr) {
-   var listSize = gridItemsArr.length;
-
-   if (listSize < 1999) {
-      var randomGridItems = getRandomGridItems(listSize);
-      for(var i = 0; i < randomGridItems.length; i++) {
-         gridItemsArr[randomGridItems[i]].style.backgroundImage = `url(../landing-grid-images/${i}.jpg)`;
-         gridItemsArr[randomGridItems[i]].style.backgroundSize = 'cover';
-         gridItemsArr[randomGridItems[i]].style.backgroundPosition = 'center';
-      }
-
+   // console.log(indexes);
+   var imageGridAreas = []
+   for(var i = 0; i < indexes.length; i++){
+      imageGridAreas.push(gridAreas[i]);
    }
-
+   return imageGridAreas;
 }
+
+
+
+
+// function addGridItemImages(gridItemsArr, gridItemImagesArr) {
+//    var listSize = gridItemsArr.length;
+
+//    if (listSize < 1999) {
+//       var randomGridItems = getRandomGridItems(listSize);
+//       for(var i = 0; i < randomGridItems.length; i++) {
+//          gridItemsArr[randomGridItems[i]].style.backgroundImage = `url(../landing-grid-images/${i}.jpg)`;
+//          gridItemsArr[randomGridItems[i]].style.backgroundSize = 'cover';
+//          gridItemsArr[randomGridItems[i]].style.backgroundPosition = 'center';
+//       }
+
+//    }
+
+// }
 
 //Get the grid container
 var landingGridElement = document.getElementById('landing-grid');
@@ -185,11 +195,21 @@ function recalcLandingGrid() {
 
    //make some of the grid item's images, based on the total amount of grid items:
    var gridItemImages = [ 
-                  '../landing-grid-images/1.png',
-                  '../landing-grid-images/2.png',
-                  '../landing-grid-images/3.png'];
+                  '../landing-grid-images/1.jpg',
+                  '../landing-grid-images/2.jpg',
+                  '../landing-grid-images/3.jpg',
+                  '../landing-grid-images/4.jpg',
+                  '../landing-grid-images/5.jpg',
+                  '../landing-grid-images/6.jpg',
+                  '../landing-grid-images/7.jpg',
+                  '../landing-grid-images/8.jpg',
+                  '../landing-grid-images/9.jpg',
+                  '../landing-grid-images/10.jpg'];
+
+   //get random grid areas based on the number of grid items.
+   Grid.gridImageAreas = getRandomGridItems(Grid.finalGridAreas);
    
-   addGridItemImages(Grid.gridItems, gridItemImages);
+   // addGridItemImages(Grid.gridItems, gridItemImages);
 
    //append all the created grid item DIVs to the fragment.
    Grid.gridItems.forEach(function(gridItem) {
