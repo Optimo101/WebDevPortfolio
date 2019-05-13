@@ -62,9 +62,8 @@
 #landing-button i {
     display: none;
     position: absolute;
-    right: 15;
+    right: 13;
     font-size: 24pt;
-    margin-left: 5px;
     color: #FFF;
 }
 
