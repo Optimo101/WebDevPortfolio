@@ -6,7 +6,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 4;
     border-bottom: 1px solid rgb(89, 89, 86);;
 }
 
@@ -18,14 +18,8 @@ nav {
     height: 100%;
 }
 
-.logo {
-    box-sizing: border-box;
-    padding: 5px;
-    border: 2px solid rgb(89, 89, 86);;
-    border-radius: 40px;
-    color: rgba(111, 184, 255, 1);
-    font-weight: 700;
-    font-size: 32pt;
+.logo img{
+    width: 75px;
 }
 
 .nav-content ul {
@@ -48,7 +42,7 @@ nav {
     color: rgb(89, 89, 86);;
     font-family: 'Raleway', sans-serif;
     font-size: 16pt;
-    font-weight: 600;
+    font-weight: 700;
     transition: color .25s ease;
 }
 
@@ -58,12 +52,12 @@ nav {
 
 .active {
     color: rgba(111, 184, 255, 1) !important;
-    font-weight: 700 !important;
 }
 
 #hamburger {
     display: none;
     cursor: pointer;
+    color: rgb(89, 89, 86);
 }
 
 @media screen and (max-width: 719px) {

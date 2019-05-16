@@ -8,5 +8,9 @@
                 $('#navigation > ul > li > a').removeClass('active');
                 $('#navigation > ul > li > a[href=\\#' + id + ']').addClass('active');
             }
+            else if (topViewPortPosition < 850) {
+                $('#navigation > ul > li > a').removeClass('active');
+                $('#nav-link-home').addClass('active');
+            }
         });
     });

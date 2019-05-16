@@ -32,13 +32,45 @@
 #landing a {
     position: absolute;
     bottom: 0;
-    margin-bottom: -8vh;
+    margin-bottom: -10vh;
     z-index: 2;
 }
 
 @media screen and (max-width:719px) {
     #landing a {
         margin-bottom: -60px;
-
     }
+}
+
+#landing-button {
+    position: relative;
+    width: 134px;
+    padding: 10px 0px 10px 20px;
+    border: 3px solid rgb(90, 144, 191);
+    color: rgb(89, 89, 86);
+    font-size: 16pt;
+    transition: background-color ease .5s, width ease .25s;
+}
+
+#landing-button:hover {
+    width: 170px;
+    background-color: rgb(90, 144, 191);
+    color: #FFF;
+    font-weight: 700;
+}
+
+#landing-button i {
+    display: none;
+    position: absolute;
+    right: 13;
+    font-size: 24pt;
+    color: #FFF;
+}
+
+
+#home-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -200px;
 }
