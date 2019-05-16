@@ -4,9 +4,7 @@
   position: fixed;
   top: 70px;
   left: 0;
-  z-index: 2;
-  
- 
+  z-index: 3;
 }
 
 #nav-mobile-menu-list {
@@ -18,18 +16,23 @@ margin-top: 0px;
 
 #nav-mobile-menu-list li div {
   width:100%;
-  height: 25%;
+  height: 20%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #FFF;
   opacity: 1;
-  font-size:18pt;
   background-image: url(../backgrounds/paper_fibers.png);
+  font-size:24pt;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(89, 89, 86);
+  transition: background-color ease .25s;
 } 
 
 #nav-mobile-menu-list li div:hover {
   background-color: rgba(111, 184, 255, 1);
+  border: 1px solid black;
 } 

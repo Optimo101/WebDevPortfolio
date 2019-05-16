@@ -25,18 +25,52 @@
     let viewSiteIcon2 = document.getElementById("view-site-icon2");
     let viewSiteIcon3 = document.getElementById("view-site-icon3");
         
-    // When the user clicks the projectBox, open the modal 
+    // When the user clicks the projectBox, open the modal
     projectBox1.onclick = function() {
         modal1.style.display = "block";
     }
     projectBox2.onclick = function() {
-        modal2.style.display = "block";
+        modal2.style.display = "block";  
     }
     projectBox3.onclick = function() {
-        modal3.style.display = "block";
+        modal3.style.display = "block";  
     }
 
-    // when the user hovers over 'View Site' button scale icon larger
+    // Start slideshows
+    $("#slideshow1 > div:gt(0)").hide();  
+        setInterval(function() { 
+            $('#slideshow1 > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slideshow1');
+        },
+        3000);
+
+    $("#slideshow2 > div:gt(0)").hide();
+        setInterval(function() { 
+            $('#slideshow2 > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slideshow2');
+        },
+        3000);
+
+    $("#slideshow3 > div:gt(0)").hide();
+        setInterval(function() { 
+            $('#slideshow3 > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slideshow3');
+        },
+        3000);
+
+    // When the user hovers over 'View Site' button scale icon larger
     modalButton1.addEventListener("mouseover", function(){
         viewSiteIcon1.style.transform = "scale(1.4) translate(4px,-2px)";
     })
@@ -108,4 +142,6 @@
         projectBox1.style.opacity = "1";
         projectBox2.style.opacity = "1";
         title3.style.fontWeight = "400";
-    });   
+    });
+
+        

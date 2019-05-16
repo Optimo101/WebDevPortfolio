@@ -1,6 +1,7 @@
 
 
 <% include partials/header %>
+<a id="home-anchor" name="top">(anchor for 'Home' link)</a>
 <% include partials/navbar %>
 <% include partials/nav-mobile-menu %>
 <% include partials/landing %>
@@ -25,6 +26,7 @@
     </div>
 
     <div id="container-h2">
+        <hr>
         <h2>Contact</h2>
         <hr>
     </div>
@@ -75,7 +77,7 @@
         </a>
     </div>
     
-    <div id="usb-drive-container" class="no-display">
+    <div id="usb-drive-container">
         <a href="/">
             <img id="usb-flash-drive" src="usb_flash_drive_cropped.png">
             <i id="resume-download" class="far fa-file-alt"></i>
@@ -91,10 +93,12 @@
 
 <script>
     if (<%= posted %>){
+        document.getElementById("html").style.scrollBehavior = "initial";
         document.getElementById("requestForm").scrollIntoView();
     }
     if (<%= success %>){
         // Scroll to form, display "success" message, reset form to default
+        document.getElementById("html").style.scrollBehavior = "smooth";
         document.getElementById("successP").style.display = "block";
     } else {
         // Scroll to form, display applicable errors and user's input data
