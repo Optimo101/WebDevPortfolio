@@ -63,16 +63,46 @@ function getRandomColorFromSet() {
 
 }
 
-function createGridItem(area) {  
+function createGridItem(area, type, index) {  
    var gridItem = document.createElement('div');
    var tracks = area.match(/(\d+)/g);
    gridItem.style.gridRowStart = tracks[0];
    gridItem.style.gridColumnStart = tracks[1];
    gridItem.style.gridRowEnd = tracks[2];
    gridItem.style.gridColumnEnd = tracks[3];
-   gridItem.style.backgroundColor = getRandomColorFromSet();
-   gridItem.style.opacity = 1;
-   gridItem.style.zIndex = 2;
+
+   if(type === 'colored'){
+      gridItem.style.opacity = 1;
+      gridItem.style.zIndex = 2;
+      gridItem.style.backgroundColor = getRandomColorFromSet();
+   }
+
+   if(type === 'coloredOverlay') {
+      gridItem.style.backgroundColor = '#5A90BF';
+      gridItem.style.opacity = .4;
+      gridItem.style.zIndex = 2;
+   }
+
+   if (type === 'image'){
+      gridItem.style.opacity = 1;
+      gridItem.style.zIndex = 1;
+      gridItem.style.backgroundImage = `url(../landing-grid-images/${index}.jpg)`;
+      gridItem.style.backgroundSize = 'cover';
+      gridItem.style.backgroundPosition = 'center';
+   }
+
+   if (type === 'titleItem'){
+      gridItem.style.opacity = 1;
+      gridItem.style.zIndex = 2;
+      gridItem.style.display = 'flex';
+      gridItem.style.flexDirection = 'row';
+      gridItem.style.justifyContent = 'flex-end';
+      gridItem.style.alignItems = 'center';
+      gridItem.style.backgroundColor = '#5A90BF';
+      // gridItem.style.backgroundImage = `url(../backgrounds/paper_fibers.png)`;
+
+   }
+
 
    return gridItem;
 }
@@ -80,54 +110,43 @@ function createGridItem(area) {
 function getRandomGridItems(gridAreas) {
    var indexes= [];
 
-   if(gridAreas.length < 25) {
-      while(indexes.length < 4) {
+   if(gridAreas.length < 25 && gridAreas.length > 0 ) {
+     for(var i = 0; i < 4; i++){
+      var index = Math.floor(Math.random()*gridAreas.length);
+      if(!(indexes.includes(index))) {
+         indexes.push(index);
+      }
+      }
+   } else if(gridAreas.length < 45 && gridAreas.length > 0) {
+      for(var i = 0; i < 6; i++){
          var index = Math.floor(Math.random()*gridAreas.length);
          if(!(indexes.includes(index))) {
             indexes.push(index);
-         }
+        }
       }
-   } else if(gridAreas.length < 45) {
-      while(indexes.length < 6) {
+   } else if(gridAreas.length >= 45) {
+      for(var i = 0; i < 10; i++){
          var index = Math.floor(Math.random()*gridAreas.length);
          if(!(indexes.includes(index))) {
             indexes.push(index);
-         }
+        }
       }
-   } else {
-      while(indexes.length < 10) {
-         var index = Math.floor(Math.random()*gridAreas.length);
-         if(!(indexes.includes(index))) {
-            indexes.push(index);
-         }
-      }
+   } else{
+      return "nothing";
    }
 
    // console.log(indexes);
-   var imageGridAreas = []
+   var imageGridAreas = [];
    for(var i = 0; i < indexes.length; i++){
-      imageGridAreas.push(gridAreas[i]);
+      imageGridAreas.push(gridAreas[indexes[i]]);
    }
+
    return imageGridAreas;
 }
 
 
 
 
-// function addGridItemImages(gridItemsArr, gridItemImagesArr) {
-//    var listSize = gridItemsArr.length;
-
-//    if (listSize < 1999) {
-//       var randomGridItems = getRandomGridItems(listSize);
-//       for(var i = 0; i < randomGridItems.length; i++) {
-//          gridItemsArr[randomGridItems[i]].style.backgroundImage = `url(../landing-grid-images/${i}.jpg)`;
-//          gridItemsArr[randomGridItems[i]].style.backgroundSize = 'cover';
-//          gridItemsArr[randomGridItems[i]].style.backgroundPosition = 'center';
-//       }
-
-//    }
-
-// }
 
 //Get the grid container
 var landingGridElement = document.getElementById('landing-grid');
@@ -154,32 +173,44 @@ function recalcLandingGrid() {
    Grid.filteredGridAreaColumns = getFilteredGridAreaColumns(Grid.allGridAreas, Grid.gridAreaSpan, Grid.numOfGridAreaColumns);
    Grid.filteredGridAreaRows = getFilteredGridAreaRows(Grid.allGridAreas, Grid.gridAreaSpan, Grid.numOfGridAreaRows);
    
-   Grid.finalGridAreas = [];
+   Grid.workingGridAreas = [];
 
    Grid.allGridAreas.forEach(function(gridArea){
       let flip = headsOrTails();
       if (flip) {
-         Grid.finalGridAreas.push(gridArea);
+         Grid.workingGridAreas.push(gridArea);
       }
    });
 
    //determine if the upper left grid area is in the final set, delete it if so.
    var firstGridAreaRegEx =/^1, 1, \d+, \d+$/;
-   if(firstGridAreaRegEx.test(Grid.finalGridAreas[0])) {
-      Grid.finalGridAreas.shift();
+   if(firstGridAreaRegEx.test(Grid.workingGridAreas[0])) {
+      Grid.workingGridAreas.shift();
    }
 
    Grid.filteredGridAreaColumns.forEach(function(gridArea){
-      if(!(Grid.finalGridAreas.includes(gridArea))) {
-         Grid.finalGridAreas.push(gridArea);
+      if(!(Grid.workingGridAreas.includes(gridArea))) {
+         Grid.workingGridAreas.push(gridArea);
       }
    });
 
    Grid.filteredGridAreaRows.forEach(function(gridArea){
-      if(!(Grid.finalGridAreas.includes(gridArea))) {
-         Grid.finalGridAreas.push(gridArea);
+      if(!(Grid.workingGridAreas.includes(gridArea))) {
+         Grid.workingGridAreas.push(gridArea);
       }
    });
+      
+   //get random grid areas based on the number of grid items.
+   Grid.gridImageAreas = getRandomGridItems(Grid.workingGridAreas);
+
+
+   Grid.finalGridAreas = Grid.workingGridAreas.filter(function(finalGridArea){
+      return Grid.gridImageAreas.includes(finalGridArea) === false;
+   });
+
+
+
+
 
    
    //create document fragment to hold all the grid items.
@@ -189,27 +220,43 @@ function recalcLandingGrid() {
    Grid.gridItems = [];
    
    Grid.finalGridAreas.forEach(function(gridArea) {
-      var gridItem = createGridItem(gridArea);
+      var gridItem = createGridItem(gridArea, 'colored');
       Grid.gridItems.push(gridItem);
    });
 
-   //make some of the grid item's images, based on the total amount of grid items:
-   var gridItemImages = [ 
-                  '../landing-grid-images/1.jpg',
-                  '../landing-grid-images/2.jpg',
-                  '../landing-grid-images/3.jpg',
-                  '../landing-grid-images/4.jpg',
-                  '../landing-grid-images/5.jpg',
-                  '../landing-grid-images/6.jpg',
-                  '../landing-grid-images/7.jpg',
-                  '../landing-grid-images/8.jpg',
-                  '../landing-grid-images/9.jpg',
-                  '../landing-grid-images/10.jpg'];
+   Grid.gridImageAreas.forEach(function(gridArea) {
+      var gridItem = createGridItem(gridArea, 'coloredOverlay');
+      Grid.gridItems.push(gridItem);
+   });
 
-   //get random grid areas based on the number of grid items.
-   Grid.gridImageAreas = getRandomGridItems(Grid.finalGridAreas);
-   
-   // addGridItemImages(Grid.gridItems, gridItemImages);
+   for(var i = 0; i < Grid.gridImageAreas.length; i++) {
+      var gridItem = createGridItem(Grid.gridImageAreas[i], 'image', i);
+      Grid.gridItems.push(gridItem);
+   };
+
+
+   //specially place title
+   //Grid is at least 4 rows:
+   if(Grid.numOfGridAreaColumns <= 6 ) {
+      var area = `${1 + Grid.gridAreaSpan} / ${1 + Grid.gridAreaSpan} / ${1 + (Grid.gridAreaSpan*2)} / 13`;
+      // console.log(area);
+      var titleItem = createGridItem(area, 'titleItem');
+
+      var titleItemElement = document.createElement('h1');
+      titleItemElement.style.margin = '5px';
+      titleItemElement.style.color = '#f4f6f6';
+      titleItemElement.style.fontFamily = 'Raleway';
+      titleItemElement.style.fontSize = '24pt';
+      titleItemElement.style.textTransform = 'uppercase';
+      titleItemElement.style.letterSpacing = '1px';
+      var t = document.createTextNode("PORTFOLIO");
+      titleItemElement.appendChild(t);    
+      console.log(titleItem);
+      titleItem.appendChild(titleItemElement);
+      Grid.gridItems.push(titleItem);
+   }
+
+
 
    //append all the created grid item DIVs to the fragment.
    Grid.gridItems.forEach(function(gridItem) {
