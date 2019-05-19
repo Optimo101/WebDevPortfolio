@@ -32,13 +32,13 @@
 #landing a {
     position: absolute;
     bottom: 0;
-    margin-bottom: -10vh;
+    margin-bottom: -80px;
     z-index: 2;
 }
 
 @media screen and (max-width:719px) {
     #landing a {
-        margin-bottom: -60px;
+        margin-bottom: -80px;
     }
 }
 

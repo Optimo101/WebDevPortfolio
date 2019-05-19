@@ -96,26 +96,43 @@ function createGridItem(area, type, index) {
       gridItem.style.zIndex = 2;
       gridItem.style.display = 'flex';
       gridItem.style.flexDirection = 'row';
-      gridItem.style.justifyContent = 'flex-end';
+      gridItem.style.justifyContent = 'center';
       gridItem.style.alignItems = 'center';
-      gridItem.style.backgroundColor = '#5A90BF';
-      // gridItem.style.backgroundImage = `url(../backgrounds/paper_fibers.png)`;
-
+      gridItem.style.backgroundColor = 'rgb(89, 89, 86)';
    }
 
-
+      if (type === 'firstLastNameItem'){
+      gridItem.style.opacity = 1;
+      gridItem.style.zIndex = 2;
+      gridItem.style.display = 'flex';
+      gridItem.style.flexDirection = 'row';
+      gridItem.style.justifyContent = 'center';
+      gridItem.style.alignItems = 'center';
+      gridItem.style.backgroundColor = '#5A90BF';
+      gridItem.style.textAlign = 'center';
+      }
+      
+      if (type === 'yearItem'){
+         gridItem.style.opacity = 1;
+         gridItem.style.zIndex = 2;
+         gridItem.style.display = 'flex';
+         gridItem.style.flexDirection = 'row';
+         gridItem.style.justifyContent = 'center';
+         gridItem.style.alignItems = 'center';
+         gridItem.style.backgroundColor = 'rgb(52, 199, 199)';
+         gridItem.style.textAlign = 'center';
+      }
    return gridItem;
 }
 
 function getRandomGridItems(gridAreas) {
    var indexes= [];
-
    if(gridAreas.length < 25 && gridAreas.length > 0 ) {
      for(var i = 0; i < 4; i++){
-      var index = Math.floor(Math.random()*gridAreas.length);
-      if(!(indexes.includes(index))) {
-         indexes.push(index);
-      }
+         var index = Math.floor(Math.random()*gridAreas.length);
+         if(!(indexes.includes(index))) {
+            indexes.push(index);
+         }
       }
    } else if(gridAreas.length < 45 && gridAreas.length > 0) {
       for(var i = 0; i < 6; i++){
@@ -135,7 +152,6 @@ function getRandomGridItems(gridAreas) {
       return "nothing";
    }
 
-   // console.log(indexes);
    var imageGridAreas = [];
    for(var i = 0; i < indexes.length; i++){
       imageGridAreas.push(gridAreas[indexes[i]]);
@@ -144,14 +160,12 @@ function getRandomGridItems(gridAreas) {
    return imageGridAreas;
 }
 
-
-
-
-
 //Get the grid container
 var landingGridElement = document.getElementById('landing-grid');
+// var landingGridElement = document.getElementById('landing-button');
 
 function recalcLandingGrid() {
+   landingGridElement.style.display = 'grid';
    landingGridElement.innerHTML = '';
 
    var Grid = {};
@@ -172,103 +186,153 @@ function recalcLandingGrid() {
    Grid.allGridAreas = getAllGridAreas(Grid.numOfGridAreaColumns, Grid.numOfGridAreaRows, Grid.gridAreaSpan);
    Grid.filteredGridAreaColumns = getFilteredGridAreaColumns(Grid.allGridAreas, Grid.gridAreaSpan, Grid.numOfGridAreaColumns);
    Grid.filteredGridAreaRows = getFilteredGridAreaRows(Grid.allGridAreas, Grid.gridAreaSpan, Grid.numOfGridAreaRows);
-   
-   Grid.workingGridAreas = [];
 
-   Grid.allGridAreas.forEach(function(gridArea){
-      let flip = headsOrTails();
-      if (flip) {
-         Grid.workingGridAreas.push(gridArea);
-      }
-   });
-
-   //determine if the upper left grid area is in the final set, delete it if so.
-   var firstGridAreaRegEx =/^1, 1, \d+, \d+$/;
-   if(firstGridAreaRegEx.test(Grid.workingGridAreas[0])) {
-      Grid.workingGridAreas.shift();
-   }
-
-   Grid.filteredGridAreaColumns.forEach(function(gridArea){
-      if(!(Grid.workingGridAreas.includes(gridArea))) {
-         Grid.workingGridAreas.push(gridArea);
-      }
-   });
-
-   Grid.filteredGridAreaRows.forEach(function(gridArea){
-      if(!(Grid.workingGridAreas.includes(gridArea))) {
-         Grid.workingGridAreas.push(gridArea);
-      }
-   });
+   if(Grid.numOfGridAreaRows < 4) {
+      landingGridElement.style.display = 'flex';
+      landingGridElement.style.flexDirection = "row";
+      landingGridElement.style.justifyContent = "center";
+      landingGridElement.style.alignItems = 'center';
+      var landscapeItemElement = document.createElement('h1');
+         landscapeItemElement.style.margin = '5px';
+         landscapeItemElement.style.color = 'rgb(89, 89, 86)';
+         landscapeItemElement.style.fontFamily = 'Raleway';
+         landscapeItemElement.style.fontSize = '20pt';
+         landscapeItemElement.style.textTransform = 'uppercase';
+         landscapeItemElement.style.letterSpacing = '1px';
+         landscapeItemElement.style.textAlign = 'center'
+         var t = document.createTextNode("Jared Schiller 2019 Portfolio");
+         landscapeItemElement.appendChild(t);
+      landingGridElement.appendChild(landscapeItemElement);
       
-   //get random grid areas based on the number of grid items.
-   Grid.gridImageAreas = getRandomGridItems(Grid.workingGridAreas);
+   } else {
+      landingGridElement.style.display = 'grid';
+      landingGridElement.style.flexDirection = "";
+      landingGridElement.style.justifyContent = "";
+      landingGridElement.style.alignItems = '';
+
+      Grid.workingGridAreas = [];
+
+      Grid.allGridAreas.forEach(function(gridArea){
+         let flip = headsOrTails();
+         if (flip) {
+            Grid.workingGridAreas.push(gridArea);
+         }
+      });
+
+      //determine if the upper left grid area is in the final set, delete it if so.
+      var firstGridAreaRegEx =/^1, 1, \d+, \d+$/;
+      if(firstGridAreaRegEx.test(Grid.workingGridAreas[0])) {
+         Grid.workingGridAreas.shift();
+      }
+
+      Grid.filteredGridAreaColumns.forEach(function(gridArea){
+         if(!(Grid.workingGridAreas.includes(gridArea))) {
+            Grid.workingGridAreas.push(gridArea);
+         }
+      });
+
+      Grid.filteredGridAreaRows.forEach(function(gridArea){
+         if(!(Grid.workingGridAreas.includes(gridArea))) {
+            Grid.workingGridAreas.push(gridArea);
+         }
+      });
+         
+      //get random grid areas based on the number of grid items.
+      Grid.gridImageAreas = getRandomGridItems(Grid.workingGridAreas);
 
 
-   Grid.finalGridAreas = Grid.workingGridAreas.filter(function(finalGridArea){
-      return Grid.gridImageAreas.includes(finalGridArea) === false;
-   });
+      Grid.finalGridAreas = Grid.workingGridAreas.filter(function(finalGridArea){
+         return Grid.gridImageAreas.includes(finalGridArea) === false;
+      });
 
+      //create document fragment to hold all the grid items.
+      var fragment = document.createDocumentFragment();
 
+      //Start makin' DIVS
+      Grid.gridItems = [];
+      
+      Grid.finalGridAreas.forEach(function(gridArea) {
+         var gridItem = createGridItem(gridArea, 'colored');
+         Grid.gridItems.push(gridItem);
+      });
 
+      Grid.gridImageAreas.forEach(function(gridArea) {
+         var gridItem = createGridItem(gridArea, 'coloredOverlay');
+         Grid.gridItems.push(gridItem);
+      });
 
+      for(var i = 0; i < Grid.gridImageAreas.length; i++) {
+         var gridItem = createGridItem(Grid.gridImageAreas[i], 'image', i);
+         Grid.gridItems.push(gridItem);
+      };
 
-   
-   //create document fragment to hold all the grid items.
-   var fragment = document.createDocumentFragment();
+      //specially place portfolio title
+      var portfolioArea;
+      if(Grid.numOfGridAreaColumns <= 6 ) {
+         portfolioArea = `${1 + Grid.gridAreaSpan} / ${1 + Grid.gridAreaSpan} / ${1 + (Grid.gridAreaSpan*2)} / 13`;
+      } else {
+         portfolioArea = `${1 + Grid.gridAreaSpan} / ${1 + Grid.gridAreaSpan} / ${1 + (Grid.gridAreaSpan*2)} / 8`;
+      }
+         var portfolioItem = createGridItem(portfolioArea, 'titleItem');
+         var portfolioItemElement = document.createElement('h1');
+         portfolioItemElement.style.margin = '5px';
+         portfolioItemElement.style.color = '#f4f6f6';
+         portfolioItemElement.style.fontFamily = 'Raleway';
+         portfolioItemElement.style.fontSize = '18pt';
+         portfolioItemElement.style.textTransform = 'uppercase';
+         portfolioItemElement.style.letterSpacing = '1px';
+         var t = document.createTextNode("PORTFOLIO");
+         portfolioItemElement.appendChild(t);
+         portfolioItem.appendChild(portfolioItemElement);
+         Grid.gridItems.push(portfolioItem);
+      
+      //specially place name
+      if(Grid.numOfGridAreaColumns <= 6 ) {
+         firstLastNameArea =  `${1 + (Grid.gridAreaSpan * 2)} / 1 / ${1 + (Grid.gridAreaSpan * 3)} / ${13 - Grid.gridAreaSpan}`;
+      } else {
+         firstLastNameArea = `${1 + (Grid.gridAreaSpan * 2)} / 1 / ${1 + (Grid.gridAreaSpan * 3)} / ${13 - (Grid.gridAreaSpan * 6)}`;
+      }
+         var firstLastNameItem = createGridItem(firstLastNameArea, 'firstLastNameItem');
+         var firstLastNameItemElement = document.createElement('h1');
+         firstLastNameItemElement.style.margin = '5px';
+         firstLastNameItemElement.style.color = '#f4f6f6';
+         firstLastNameItemElement.style.fontFamily = 'Raleway';
+         firstLastNameItemElement.style.fontSize = '18pt';
+         firstLastNameItemElement.style.textTransform = 'uppercase';
+         firstLastNameItemElement.style.letterSpacing = '1px';
+         var t = document.createTextNode("Jared Schiller");
+         firstLastNameItemElement.appendChild(t);    
+         firstLastNameItem.appendChild(firstLastNameItemElement);
+         Grid.gridItems.push(firstLastNameItem);
 
-   //Start makin' DIVS
-   Grid.gridItems = [];
-   
-   Grid.finalGridAreas.forEach(function(gridArea) {
-      var gridItem = createGridItem(gridArea, 'colored');
-      Grid.gridItems.push(gridItem);
-   });
+   var yearItemArea;
+      //specially place year
+      if(Grid.numOfGridAreaColumns <= 6 ) {
+         yearItemArea =  `${(((Grid.numOfGridAreaRows * Grid.gridAreaSpan) + 1) - Grid.gridAreaSpan)} / ${13 - (Grid.gridAreaSpan * 2)} / ${((Grid.numOfGridAreaRows * Grid.gridAreaSpan) + 1)} / 13`;
+      } else {
+         yearItemArea =  `${(((Grid.numOfGridAreaRows * Grid.gridAreaSpan) + 1) - Grid.gridAreaSpan)} / ${13 - (Grid.gridAreaSpan * 3)} / ${((Grid.numOfGridAreaRows * Grid.gridAreaSpan) + 1)} / ${13 - (Grid.gridAreaSpan * 1)}`;
+      }
+      var yearItem = createGridItem(yearItemArea, 'yearItem');
+      var yearItemElement = document.createElement('h1');
+      yearItemElement.style.color = '#f4f6f6';
+      yearItemElement.style.fontFamily = 'Raleway';
+      yearItemElement.style.fontSize = '18pt';
+      yearItemElement.style.textTransform = 'uppercase';
+      yearItemElement.style.letterSpacing = '1px';
+      var t = document.createTextNode("2019");
+      yearItemElement.appendChild(t);    
+      yearItem.appendChild(yearItemElement);
+      Grid.gridItems.push(yearItem);
 
-   Grid.gridImageAreas.forEach(function(gridArea) {
-      var gridItem = createGridItem(gridArea, 'coloredOverlay');
-      Grid.gridItems.push(gridItem);
-   });
+      //append all the created grid item DIVs to the fragment.
+      Grid.gridItems.forEach(function(gridItem) {
+         fragment.appendChild(gridItem);
+      });
 
-   for(var i = 0; i < Grid.gridImageAreas.length; i++) {
-      var gridItem = createGridItem(Grid.gridImageAreas[i], 'image', i);
-      Grid.gridItems.push(gridItem);
-   };
-
-
-   //specially place title
-   //Grid is at least 4 rows:
-   if(Grid.numOfGridAreaColumns <= 6 ) {
-      var area = `${1 + Grid.gridAreaSpan} / ${1 + Grid.gridAreaSpan} / ${1 + (Grid.gridAreaSpan*2)} / 13`;
-      // console.log(area);
-      var titleItem = createGridItem(area, 'titleItem');
-
-      var titleItemElement = document.createElement('h1');
-      titleItemElement.style.margin = '5px';
-      titleItemElement.style.color = '#f4f6f6';
-      titleItemElement.style.fontFamily = 'Raleway';
-      titleItemElement.style.fontSize = '24pt';
-      titleItemElement.style.textTransform = 'uppercase';
-      titleItemElement.style.letterSpacing = '1px';
-      var t = document.createTextNode("PORTFOLIO");
-      titleItemElement.appendChild(t);    
-      console.log(titleItem);
-      titleItem.appendChild(titleItemElement);
-      Grid.gridItems.push(titleItem);
+      //append the fragment to the grid container.
+      landingGridElement.appendChild(fragment);
    }
-
-
-
-   //append all the created grid item DIVs to the fragment.
-   Grid.gridItems.forEach(function(gridItem) {
-      fragment.appendChild(gridItem);
-   });
-
-   //append the fragment to the grid container.
-   landingGridElement.appendChild(fragment);
-
-   console.log(Grid);
 }
 
 window.onload = recalcLandingGrid;
 window.onresize = recalcLandingGrid;
-
