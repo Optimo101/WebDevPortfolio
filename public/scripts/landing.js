@@ -271,7 +271,7 @@ function recalcLandingGrid() {
       if(Grid.numOfGridAreaColumns <= 6 ) {
          portfolioArea = `${1 + Grid.gridAreaSpan} / ${1 + Grid.gridAreaSpan} / ${1 + (Grid.gridAreaSpan*2)} / 13`;
       } else {
-         portfolioArea = `${1 + Grid.gridAreaSpan} / ${1 + Grid.gridAreaSpan} / ${1 + (Grid.gridAreaSpan*2)} / 8`;
+         portfolioArea = `${1 + Grid.gridAreaSpan} / ${1 + (Grid.gridAreaSpan * 2)} / ${1 + (Grid.gridAreaSpan*2)} / 8`;
       }
          var portfolioItem = createGridItem(portfolioArea, 'titleItem');
          var portfolioItemElement = document.createElement('h1');
@@ -300,7 +300,7 @@ function recalcLandingGrid() {
          firstLastNameItemElement.style.fontSize = '18pt';
          firstLastNameItemElement.style.textTransform = 'uppercase';
          firstLastNameItemElement.style.letterSpacing = '1px';
-         var t = document.createTextNode("Jared Schiller");
+         var t = document.createTextNode("Kanye West");
          firstLastNameItemElement.appendChild(t);    
          firstLastNameItem.appendChild(firstLastNameItemElement);
          Grid.gridItems.push(firstLastNameItem);
