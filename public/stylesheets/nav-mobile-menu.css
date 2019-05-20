@@ -5,7 +5,6 @@
   top: 70px;
   left: 0;
   z-index: 3;
- 
 }
 
 #nav-mobile-menu-list {
@@ -25,6 +24,7 @@ margin-top: 0px;
   box-sizing: border-box;
   background-color: #FFF;
   opacity: 1;
+  background-image: url(../backgrounds/paper_fibers.png);
   font-size:24pt;
   font-weight: 700;
   font-family: 'Raleway', sans-serif;
