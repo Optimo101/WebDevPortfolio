@@ -107,7 +107,7 @@ function createGridItem(area, type, index) {
       gridItem.style.display = 'flex';
       gridItem.style.flexDirection = 'row';
       gridItem.style.justifyContent = 'center';
-      gridItem.style.alignItems = 'center';
+      gridItem.style.alignItems = 'center'; 
       gridItem.style.backgroundColor = '#5A90BF';
       gridItem.style.textAlign = 'center';
       }
@@ -117,7 +117,7 @@ function createGridItem(area, type, index) {
          gridItem.style.zIndex = 2;
          gridItem.style.display = 'flex';
          gridItem.style.flexDirection = 'row';
-         gridItem.style.justifyContent = 'center';
+         gridItem.style.justifyContent = 'center';  
          gridItem.style.alignItems = 'center';
          gridItem.style.backgroundColor = 'rgb(52, 199, 199)';
          gridItem.style.textAlign = 'center';
@@ -279,6 +279,11 @@ function recalcLandingGrid() {
          portfolioItemElement.style.color = '#f4f6f6';
          portfolioItemElement.style.fontFamily = 'Raleway';
          portfolioItemElement.style.fontSize = '18pt';
+   
+         if(Grid.numOfGridAreaColumns == 6 ) {
+            portfolioItemElement.style.fontSize = '24pt';
+         }
+
          portfolioItemElement.style.textTransform = 'uppercase';
          portfolioItemElement.style.letterSpacing = '1px';
          var t = document.createTextNode("PORTFOLIO");
@@ -298,12 +303,19 @@ function recalcLandingGrid() {
          firstLastNameItemElement.style.color = '#f4f6f6';
          firstLastNameItemElement.style.fontFamily = 'Raleway';
          firstLastNameItemElement.style.fontSize = '18pt';
+
+         if(Grid.numOfGridAreaColumns == 6 ) {
+            firstLastNameItemElement.style.fontSize = '24pt';
+         }
+
          firstLastNameItemElement.style.textTransform = 'uppercase';
          firstLastNameItemElement.style.letterSpacing = '1px';
-         var t = document.createTextNode("Kanye West");
+         var t = document.createTextNode("Justin Schiller");
          firstLastNameItemElement.appendChild(t);    
          firstLastNameItem.appendChild(firstLastNameItemElement);
          Grid.gridItems.push(firstLastNameItem);
+
+      
 
    var yearItemArea;
       //specially place year
