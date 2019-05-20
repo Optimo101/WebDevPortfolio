@@ -73,10 +73,6 @@ nav {
     .nav-content {
         width: 80%;
     }
-
-    nav {
-        background-image: url(../backgrounds/paper_fibers.png);
-    }
 }
 
 @media screen and (min-width: 720px) {
